@@ -8,3 +8,4 @@
 .DS_Store
 .svn
 .sass-cache
+/dist
