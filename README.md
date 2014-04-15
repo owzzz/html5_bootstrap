@@ -34,6 +34,20 @@ npm install
 bower install
 ```
 
+##### Image optimisation dependencies
+
+To run optimisations over images we use imagemagik, to install we need to use brew. If you do not have brew installed you;ll need to get that
+
+```
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+```
+
+Now we can install imagemagick
+
+```
+brew install imagemagick
+```
+
 ##### Starting grunt
 
 We have two targets we can run, the first applies the following:
