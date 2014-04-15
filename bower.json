@@ -1,0 +1,21 @@
+{
+  "name": "Maker",
+  "version": "0.0.0",
+  "description": "Single Page Website",
+  "main": "index.html",
+  "authors": [
+    "Owain Llewellyn"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "~2.7.2"
+  }
+}
