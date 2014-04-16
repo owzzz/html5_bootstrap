@@ -82,6 +82,7 @@ module.exports = function(grunt) {
         dest: DIST_PATH + 'js/main.js'
       }
     },
+
     uglify: {
       dist: {
         options: {
@@ -97,6 +98,7 @@ module.exports = function(grunt) {
 
         }
       },
+
       dev: {
         options: {
           compress: {
@@ -112,6 +114,7 @@ module.exports = function(grunt) {
         }  
       }
     },
+
     jshint: {
       files: ['Gruntfile.js', './' + DEV_PATH + '/js/**/*.js', '!./' + DEV_PATH + '/js/vendor/**/*.js', '!./' + DIST_PATH + '/js/main.js', '!./' + DIST_PATH + '/js/main.min.js'],
       jshintrc: ".jshintrc",
@@ -119,6 +122,7 @@ module.exports = function(grunt) {
         reporter: require('jshint-stylish')
       }
     },
+
     htmlmin: {
       dist: {
         options: {
@@ -135,6 +139,34 @@ module.exports = function(grunt) {
         }
       }
     },
+    imagemin: {
+      dev: {
+        options: {
+          optimizationLevel: 3
+        },
+        files: [{
+          expand: true,
+          cwd: DEV_PATH,
+          src: ['**/*.{png,jpg,gif}'], 
+          dest: DIST_PATH            
+        }]
+      },
+      dist: {
+        options: {
+          optimizationLevel: 7,
+          interlaced: true,
+          pngquant: true,
+          progressive: true
+        },
+        files: [{
+          expand: true,
+          cwd: DEV_PATH,
+          src: ['**/*.{png,jpg,gif}'],
+          dest: DIST_PATH 
+        }]
+      }
+    },
+
     watch: {
       options: {
         livereload: {
@@ -156,9 +188,9 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:dev', 'newer:sass:dev', 'newer:htmlmin:dev', 'watch']);
+  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:dev', 'newer:sass:dev', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'watch']);
 
-  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'uglify:dist', 'sass:dist', 'htmlmin:dist']);
+  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'uglify:dist', 'sass:dist', 'newer:imagemin:dist', 'htmlmin:dist']);
 
   grunt.registerTask('server', ['connect']);
 
