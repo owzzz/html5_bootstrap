@@ -7,6 +7,7 @@ Bacon ipsum dolor sit amet salami ham venison bacon chicken. Filet mignon hambur
 #### Features
 
 * SASS Compilation
+* Bower
 * JS Browserify
 * JS Uglify
 * Source Maps
