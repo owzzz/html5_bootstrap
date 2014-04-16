@@ -191,7 +191,7 @@ module.exports = function(grunt) {
         }
       },
       styles: {
-        files: [DEV_PATH + 'sass/**/*.sass'],
+        files: [DEV_PATH + 'sass/**/*.{sass,scss}'],
         tasks: ['newer:sass:dev']
       },
       scripts: {
