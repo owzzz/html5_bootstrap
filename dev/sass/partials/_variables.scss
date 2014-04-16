@@ -1,10 +1,15 @@
 // Colours
-$colBase: #000;
-$colSecondary: #000;
+$colBase: #ff0000; // Red - Light
+$colSecondary: #ed1d24;
 
-$colBlack: #000;
-$colGrey: #000;
+$colBlack: #242424;
+$colGrey: #f6f6f6;
 $colWhite: #FFF;
+
+// Type Based Colours
+$mainTitleCopy: #ed1d24;
+$mainSubTitleCopy: #4d4f53;
+$bodyCopy: #868686;
 
 // BreakPoints
 $bpMobileMin: 320px;
