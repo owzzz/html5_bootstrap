@@ -13,13 +13,17 @@ $bodyCopy: #868686;
 
 // BreakPoints
 $bpMobileMin: 320px;
-$bpMobileMax: 520px;
+$bpMobileMax: 640px;
 
-$bpTabletMin: 640px;
+$bpTabletMin: 641px;
 $bpTabletMax: 1280px;
 
 $bpDesktopMin: 1024px;
-$bpDesktopMid: 1220px;
+$bpDesktopMid: 1280px;
 $bpDesktopMax: 1440px; 
 
-
+// Spacing
+$verticalSpacingSml: 10px;
+$verticalSpacingMed: 20px;
+$verticalSpacingLrg: 40px;
+$verticalSpacingXl: 60px;
