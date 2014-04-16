@@ -211,7 +211,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:dev', 'newer:sass:dev', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
 
-  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'uglify:dist', 'sass:dist', 'newer:responsive_images', 'newer:imagemin:dist', 'htmlmin:dist']);
+  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'uglify:dist', 'sass:dist', 'htmlmin:dist', 'imagemin:dist', 'responsive_images']);
 
   grunt.registerTask('server', ['connect']);
 
