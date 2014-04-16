@@ -167,6 +167,23 @@ module.exports = function(grunt) {
       }
     },
 
+    responsive_images: {
+      options: {
+        engine: 'im',
+        sizes: [{ name: 'small', width: 320 },{ name: 'medium', width: 640 },{ name: 'large', width: 1024 }],
+        quality: 0.2,
+        aspectRatio: true
+      },
+      dist: {
+        files: [{
+          expand: true,
+          src: ['img/**.{jpg,gif,png}'],
+          cwd: DEV_PATH,
+          dest: DIST_PATH
+        }]
+      }
+    },
+
     watch: {
       options: {
         livereload: {
@@ -174,23 +191,27 @@ module.exports = function(grunt) {
         }
       },
       styles: {
-        files: 'sass/**/*.sass',
-        tasks: [DEV_PATH + 'sass']
+        files: [DEV_PATH + 'sass/**/*.sass'],
+        tasks: ['newer:sass:dev']
       },
       scripts: {
         files: [DEV_PATH + 'js/**/*.js'],
-        tasks: ['jshint', 'browserify', 'uglify']
+        tasks: ['newer:jshint', 'newer:browserify', 'newer:uglify:dev']
       },
       html: {
         files: [DEV_PATH + '**/*.html'],
-        tasks: ['copy']
+        tasks: ['copy', 'newer:htmlmin:dev']
+      },
+      images: {
+        files: [DEV_PATH + 'img/**/*.{jpg,gif,png}'],
+        tasks: ['newer:responsive_images', 'newer:imagemin:dev']
       }
     }
   });
 
-  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:dev', 'newer:sass:dev', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'watch']);
+  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:dev', 'newer:sass:dev', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
 
-  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'uglify:dist', 'sass:dist', 'newer:imagemin:dist', 'htmlmin:dist']);
+  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'uglify:dist', 'sass:dist', 'newer:responsive_images', 'newer:imagemin:dist', 'htmlmin:dist']);
 
   grunt.registerTask('server', ['connect']);
 
