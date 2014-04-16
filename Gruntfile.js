@@ -156,7 +156,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('dev', ['clean', 'copy', 'jshint', 'browserify', 'uglify:dev', 'sass:dev', 'htmlmin:dev', 'watch']);
+  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:dev', 'newer:sass:dev', 'newer:htmlmin:dev', 'watch']);
 
   grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'uglify:dist', 'sass:dist', 'htmlmin:dist']);
 
