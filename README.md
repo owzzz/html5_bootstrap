@@ -97,6 +97,11 @@ grunt prod
 grunt server
 ```
 
+#### FAQ
+
+* **I'm receiving a `fatal error: spawn ENOENT` error. Any ideas?**
+
+Ensure the Imagemagick tool is installed. If it is installed try uninstalling and reinstalling Imagemagick if you are having issues.
 
 #### Change log
 
