@@ -7,17 +7,17 @@ Setting up Grunt tooling at the start of projects can be tedious and time consum
 
 #### Features
 
-* Auto Prefixer
-* SASS Compilation
-* Bower
-* JS Browserify
-* JS Uglify
-* Source Maps
-* Newer
-* Responsive Images
-* Image Minification
-* HTML Minification
-* Watch / Live reload
+* [Auto Prefixer](https://github.com/nDmitry/grunt-autoprefixer‎)
+* [SASS Compilation](https://github.com/gruntjs/grunt-contrib-sass)
+* [Bower](http://bower.io/)
+* [JS Browserify](http://browserify.org)
+* [JS Uglify](https://github.com/gruntjs/grunt-contrib-uglify)
+* [Source Maps](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/)
+* [Newer](https://github.com/tschaub/grunt-newer)
+* [Responsive Images](https://github.com/andismith/grunt-responsive-images)
+* [Image Minification](https://github.com/gruntjs/grunt-contrib-imagemin)
+* [HTML Minification](https://github.com/gruntjs/grunt-contrib-htmlmin‎)
+* [Watch / Live reload](https://github.com/gruntjs/grunt-contrib-watch)
 
 #### Libraries
 
