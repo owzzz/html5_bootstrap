@@ -1,5 +1,7 @@
+//Bulletproof @font-face Syntax (http://paulirish.com/2010/font-face-gotchas/#smiley)
+
 @font-face {
-  font-family: 'Graublau Web';
+  font-family: 'FONT_NAME_GOES_HERE';
   src: url('FONT_NAME_GOES_HERE.eot');
   src: local('☺'),
        url('FONT_NAME_GOES_HERE.woff') format('woff'), url('FONT_NAME_GOES_HERE.ttf') format('truetype');
