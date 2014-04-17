@@ -9,9 +9,6 @@ Setting up Grunt tooling at the start of projects can be tedious and time consum
 
 #### Features
 
-* [Modernizr](http://modernizr.com/)
-* [Bourbon](http://bourbon.io/docs/)
-* [Neat Grids](http://neat.bourbon.io)
 * Auto Prefixer
 * SASS Compilation
 * Bower
@@ -23,6 +20,12 @@ Setting up Grunt tooling at the start of projects can be tedious and time consum
 * Image Minification
 * HTML Minification
 * Watch / Live reload
+
+#### Libraries
+
+* [Modernizr](http://modernizr.com/)
+* [Bourbon](http://bourbon.io/docs/)
+* [Neat Grids](http://neat.bourbon.io)
 
 ####Installation
 
