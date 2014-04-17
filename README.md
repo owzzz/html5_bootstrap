@@ -63,7 +63,7 @@ bower install
 
 #### Image optimisation dependencies
 
-To run optimisations over images we use imagemagik, to install we need to use brew. If you do not have brew installed you;ll need to get that
+To run optimisations over images we use imagemagik, to install we need to use brew. If you do not have brew installed you'll need to go ahead and get that setup.
 
 ```
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
