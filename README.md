@@ -2,10 +2,8 @@
 
 ####Introduction
 
-Setting up Grunt tooling at the start of projects can be tedious and time consuming. After doing it for the millionth time I decided to create a base HTML5 bootstrap to roll projects. It's not too opinionated. But it does make a few decisions which you might want to think about before using this bootstrap.
+Setting up Grunt tooling at the start of projects can be tedious and time consuming. After doing it for the millionth time I decided to create a base HTML5 bootstrap to roll projects.
 
-1. It uses Neat and Bourbon for SASS
-2. Modernizr is included out of the box
 
 #### Features
 
@@ -29,7 +27,7 @@ Setting up Grunt tooling at the start of projects can be tedious and time consum
 
 ####Installation
 
-Bacon ipsum dolor sit amet salami ham venison bacon chicken. Filet mignon hamburger capicola ball tip swine pork belly. Shoulder strip steak chuck spare ribs kevin sirloin.
+There are several hoops you may have to jump through to get all dependencies installed, but hopefully alot of this stuff will be on your machine anyway.
 
 ##### Installing Ruby dependencies
 
