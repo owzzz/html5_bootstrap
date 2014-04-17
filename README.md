@@ -72,33 +72,34 @@ brew install imagemagick
 
 ##### Starting grunt
 
-We have two targets we can run, the first applies the following:
+We have three targets we can run ```dev```, ```dist```, ```server```.
+
+Dev is pretty optimised but gives you source maps and does not optimise images as much as Dist. Dirstribution target is highly optimised and is production ready. Use this when building to a production server. Spinning up a simple http server you'll use the server target. It comes with live reload turned on.
 
 
-* Linting of JS
-* Concatenation of JS
-* Minification of JS
-* SASS compilation
-* Watches for changes
+This task are pretty self explanatory but for the purpose of this documentation I've listed them below:
 
-This task can be run by using:
+###### Development target
 
 ```
 grunt dev
 ```
 
-The second does all the above but does not run the watch and adds more optimisation:
-
-* Image Optimisations
+###### Production target
 
 ```
 grunt prod
 ```
 
+###### Server target
+
+```
+grunt server
+```
 
 
 #### Change log
 
-Bacon ipsum dolor sit amet salami ham venison bacon chicken. Filet mignon hamburger capicola ball tip swine pork belly. Shoulder strip steak chuck spare ribs kevin sirloin.
+I've got nothing.
 
 * Updated item **(DATE)**
