@@ -63,16 +63,16 @@ bower install
 
 #### Image optimisation dependencies
 
-To run optimisations over images we use imagemagik, to install we need to use brew. If you do not have brew installed you'll need to go ahead and get that setup.
+To run optimisations over images we use GraphicsMagick, to install we need to use brew. If you do not have brew installed you'll need to go ahead and get that setup.
 
 ```
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ```
 
-Now we can install imagemagick
+Now we can install GraphicsMagick
 
 ```
-brew install imagemagick
+brew install GraphicsMagick
 ```
 
 #### Starting grunt
@@ -104,9 +104,6 @@ grunt server
 
 #### FAQ
 
-* **I'm receiving a `fatal error: spawn ENOENT` error. Any ideas?**
-
-Ensure the Imagemagick tool is installed. If it is installed try uninstalling and reinstalling Imagemagick if you are having issues.
 
 #### Change log
 

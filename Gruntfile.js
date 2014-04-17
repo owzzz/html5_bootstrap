@@ -225,7 +225,7 @@ module.exports = function(grunt) {
 
     responsive_images: {
       options: {
-        engine: 'im',
+        engine: 'gm',
         sizes: [{ name: 'small', width: 320 },{ name: 'medium', width: 640 },{ name: 'large', width: 1024 }],
         quality: 0.2,
         aspectRatio: true
