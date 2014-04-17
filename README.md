@@ -79,19 +79,19 @@ Dev is pretty optimised but gives you source maps and does not optimise images a
 
 This task are pretty self explanatory but for the purpose of this documentation I've listed them below:
 
-###### Development target
+##### Development target
 
 ```
 grunt dev
 ```
 
-###### Production target
+##### Production target
 
 ```
 grunt prod
 ```
 
-###### Server target
+##### Server target
 
 ```
 grunt server
