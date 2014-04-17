@@ -1,11 +1,18 @@
-#Title
+# HTML5 Bootstrap
 
 ####Introduction
 
-Bacon ipsum dolor sit amet salami ham venison bacon chicken. Filet mignon hamburger capicola ball tip swine pork belly. Shoulder strip steak chuck spare ribs kevin sirloin. Salami kielbasa turducken drumstick, venison prosciutto capicola fatback ribeye. Bresaola jowl turkey fatback beef ribs, andouille doner drumstick brisket pastrami meatloaf leberkas sirloin. Cow pork chop hamburger ham flank turkey brisket ground round chuck meatloaf pig. Tail flank drumstick kevin.
+Setting up Grunt tooling at the start of projects can be tedious and time consuming. After doing it for the millionth time I decided to create a base HTML5 bootstrap to roll projects. It's not too opinionated. But it does make a few decisions which you might want to think about before using this bootstrap.
+
+1. It uses Neat and Bourbon for SASS
+2. Modernizr is included out of the box
 
 #### Features
 
+* [Modernizr](http://modernizr.com/)
+* [Bourbon](http://bourbon.io/docs/)
+* [Neat Grids](http://neat.bourbon.io)
+* Auto Prefixer
 * SASS Compilation
 * Bower
 * JS Browserify
