@@ -8,9 +8,19 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+    // Clean
+    // Clear files and folders.
+    // https://github.com/gruntjs/grunt-contrib-clean
+
     clean: {
       dist: [DIST_PATH]
     },
+
+    // Copy
+    // Copy files and folders.
+    // https://github.com/gruntjs/grunt-contrib-copy
+
     copy: {
       dist: {
         files: [
@@ -36,6 +46,11 @@ module.exports = function(grunt) {
         ]
       }
     },
+
+    // Connect
+    // Start a static web server.
+    // https://github.com/gruntjs/grunt-contrib-connect
+
     connect: {
       server: {
         options: {
@@ -46,6 +61,11 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    // SASS
+    // Compile Sass to CSS.
+    // https://github.com/gruntjs/grunt-contrib-sass
+
     sass: {                         
       dist: {                          
         options: {                      
@@ -66,13 +86,21 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    // Browserify
+    // Grunt task for node-browserify
+    // https://github.com/jmreidy/grunt-browserify
+
     browserify: {
       dist: {
         files: {
-          'dist/js/main.min.js': [DEV_PATH + '**/*.js']
+          'dist/js/main.min.js' : [DEV_PATH + '**/*.js', '!dev/js/vendor/']
         }
       }
     },
+    // Concat
+    // Concatenate files.
+    // https://github.com/gruntjs/grunt-contrib-concat
     concat: {
       options: {
         separator: ';'
@@ -82,6 +110,10 @@ module.exports = function(grunt) {
         dest: DIST_PATH + 'js/main.js'
       }
     },
+
+    // Uglify
+    // Minify files with UglifyJS.
+    // https://github.com/gruntjs/grunt-contrib-uglify
 
     uglify: {
       dist: {
@@ -110,10 +142,13 @@ module.exports = function(grunt) {
         files: {
           'dist/js/main.min.js': ['dist/js/main.min.js'],
           'dist/js/modernizr.min.js': ['dev/js/vendor/modernizr/modernizr.js']
-
         }  
       }
     },
+
+    // JSHint
+    // Validate files with JSHint.
+    // https://github.com/gruntjs/grunt-contrib-jshint
 
     jshint: {
       files: ['Gruntfile.js', './' + DEV_PATH + '/js/**/*.js', '!./' + DEV_PATH + '/js/vendor/**/*.js', '!./' + DIST_PATH + '/js/main.js', '!./' + DIST_PATH + '/js/main.min.js'],
@@ -122,6 +157,10 @@ module.exports = function(grunt) {
         reporter: require('jshint-stylish')
       }
     },
+
+    // HTMLMin
+    // Minify HTML.
+    // https://github.com/gruntjs/grunt-contrib-htmlmin
 
     htmlmin: {
       dist: {
@@ -139,6 +178,11 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    // Imagemin
+    // Minify PNG and JPEG images.
+    // https://github.com/gruntjs/grunt-contrib-imagemin
+
     imagemin: {
       dev: {
         options: {
@@ -147,7 +191,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: DEV_PATH,
-          src: ['**/*.{png,jpg,gif}'], 
+          src: ['**/*.{png,jpg,gif}', '!vendor/**/*.{png,jpg,gif}'], 
           dest: DIST_PATH            
         }]
       },
@@ -161,11 +205,15 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: DEV_PATH,
-          src: ['**/*.{png,jpg,gif}'],
+          src: ['**/*.{png,jpg,gif}', '!vendor/**/*.{png,jpg,gif}'],
           dest: DIST_PATH 
         }]
       }
     },
+
+    // Responsive Images
+    // Produce images at different sizes for responsive websites.
+    // https://github.com/andismith/grunt-responsive-images
 
     responsive_images: {
       options: {
@@ -183,6 +231,26 @@ module.exports = function(grunt) {
         }]
       }
     },
+
+    // AutoPrefixer
+    // Parse CSS and add vendor-prefixed CSS properties using the Can I Use database. Based on Autoprefixer.
+    // https://github.com/nDmitry/grunt-autoprefixer
+
+    autoprefixer: {
+      options: {
+        browsers: ['last 2 version', 'ie 8', 'ie 9']
+      },
+      dist: {
+        expand: true,
+        flatten: true,
+        src: DIST_PATH + 'css/**/*.css',
+        dest: DIST_PATH + 'css/'
+      }
+    },
+
+    // Watch
+    // Run tasks whenever watched files change.
+    // https://github.com/gruntjs/grunt-contrib-watch
 
     watch: {
       options: {
@@ -209,9 +277,9 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:dev', 'newer:sass:dev', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
+  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:dev', 'newer:sass:dev', 'autoprefixer', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
 
-  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'uglify:dist', 'sass:dist', 'htmlmin:dist', 'imagemin:dist', 'responsive_images']);
+  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'uglify:dist', 'sass:dist', 'autoprefixer', 'htmlmin:dist', 'imagemin:dist', 'responsive_images']);
 
   grunt.registerTask('server', ['connect']);
 
