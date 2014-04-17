@@ -116,6 +116,18 @@ module.exports = function(grunt) {
     // https://github.com/gruntjs/grunt-contrib-uglify
 
     uglify: {
+      modernizr: {
+        options: {
+          compress: {
+            drop_console: true
+          },
+          mangle: true,
+          sourceMap: false
+        },
+        files: {
+          'dist/js/modernizr.min.js': ['dev/js/vendor/modernizr/modernizr.js']
+        }
+      },
       dist: {
         options: {
           compress: {
@@ -125,12 +137,9 @@ module.exports = function(grunt) {
           sourceMap: false
         },
         files: {
-          'dist/js/main.min.js': ['dist/js/main.min.js'],
-          'dist/js/modernizr.min.js': ['dev/js/vendor/modernizr/modernizr.js']
-
+          'dist/js/main.min.js': ['dist/js/main.min.js']
         }
       },
-
       dev: {
         options: {
           compress: {
@@ -140,8 +149,7 @@ module.exports = function(grunt) {
           sourceMap: true
         },
         files: {
-          'dist/js/main.min.js': ['dist/js/main.min.js'],
-          'dist/js/modernizr.min.js': ['dev/js/vendor/modernizr/modernizr.js']
+          'dist/js/main.min.js': ['dist/js/main.min.js']
         }  
       }
     },
@@ -191,7 +199,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: DEV_PATH,
-          src: ['**/*.{png,jpg,gif}', '!vendor/**/*.{png,jpg,gif}'], 
+          src: ['img/**/*.{png,jpg,gif}'], 
           dest: DIST_PATH            
         }]
       },
@@ -205,7 +213,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: DEV_PATH,
-          src: ['**/*.{png,jpg,gif}', '!vendor/**/*.{png,jpg,gif}'],
+          src: ['img/**/*.{png,jpg,gif}'],
           dest: DIST_PATH 
         }]
       }
@@ -277,9 +285,9 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:dev', 'newer:sass:dev', 'autoprefixer', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
+  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:modernizr', 'newer:uglify:dev', 'newer:sass:dev', 'autoprefixer', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
 
-  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'uglify:dist', 'sass:dist', 'autoprefixer', 'htmlmin:dist', 'imagemin:dist', 'responsive_images']);
+  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'newer:uglify:modernizr', 'uglify:dist', 'sass:dist', 'autoprefixer', 'htmlmin:dist', 'imagemin:dist', 'responsive_images']);
 
   grunt.registerTask('server', ['connect']);
 
