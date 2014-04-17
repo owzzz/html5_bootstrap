@@ -26,6 +26,11 @@ Setting up Grunt tooling at the start of projects can be tedious and time consum
 * [Bourbon](http://bourbon.io/docs/)
 * [Neat Grids](http://neat.bourbon.io)
 
+#### Requirements
+Make sure your have the following installed with these versions or greater when running the bootstrap
+
+* Node v0.10.26 +
+
 #### Installation
 
 There are several hoops you may have to jump through to get all dependencies installed, but hopefully alot of this stuff will be on your machine anyway.
