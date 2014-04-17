@@ -21,6 +21,7 @@ Setting up Grunt tooling at the start of projects can be tedious and time consum
 
 #### Libraries
 
+* [Normalize](http://necolas.github.io/normalize.css/)
 * [Modernizr](http://modernizr.com/)
 * [Bourbon](http://bourbon.io/docs/)
 * [Neat Grids](http://neat.bourbon.io)
