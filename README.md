@@ -26,7 +26,7 @@ Setting up Grunt tooling at the start of projects can be tedious and time consum
 * [Bourbon](http://bourbon.io/docs/)
 * [Neat Grids](http://neat.bourbon.io)
 
-####Installation
+#### Installation
 
 There are several hoops you may have to jump through to get all dependencies installed, but hopefully alot of this stuff will be on your machine anyway.
 
@@ -44,19 +44,19 @@ Then we need to get the rest of our ruby dependencies (Sass, Neat Bourbon)
 bundle install
 ```
 
-##### Installing Tooling dependencies (Grunt tasks, Bower)
+#### Installing Tooling dependencies (Grunt tasks, Bower)
 
 ```
 npm install
 ```
 
-##### Library dependencies (Client Libraries)
+#### Library dependencies (Client Libraries)
 
 ```
 bower install
 ```
 
-##### Image optimisation dependencies
+#### Image optimisation dependencies
 
 To run optimisations over images we use imagemagik, to install we need to use brew. If you do not have brew installed you;ll need to get that
 
@@ -70,7 +70,7 @@ Now we can install imagemagick
 brew install imagemagick
 ```
 
-##### Starting grunt
+#### Starting grunt
 
 We have three targets we can run ```dev```, ```dist```, ```server```.
 
@@ -79,19 +79,19 @@ Dev is pretty optimised but gives you source maps and does not optimise images a
 
 This task are pretty self explanatory but for the purpose of this documentation I've listed them below:
 
-##### Development target
+#### Development target
 
 ```
 grunt dev
 ```
 
-##### Production target
+#### Production target
 
 ```
 grunt prod
 ```
 
-##### Server target
+#### Server target
 
 ```
 grunt server
