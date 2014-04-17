@@ -29,7 +29,7 @@ Setting up Grunt tooling at the start of projects can be tedious and time consum
 #### Requirements
 Make sure your have the following installed with these versions or greater when running the bootstrap
 
-* ```Node v0.10.26 +```
+* ```Node v0.10.26```
 
 #### Installation
 
