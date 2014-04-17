@@ -263,7 +263,7 @@ module.exports = function(grunt) {
     watch: {
       options: {
         livereload: {
-          port: 9000
+          port: 35729
         }
       },
       styles: {
