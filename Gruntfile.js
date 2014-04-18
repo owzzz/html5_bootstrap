@@ -98,9 +98,11 @@ module.exports = function(grunt) {
         }
       }
     },
+
     // Concat
     // Concatenate files.
     // https://github.com/gruntjs/grunt-contrib-concat
+    
     concat: {
       options: {
         separator: ';'
