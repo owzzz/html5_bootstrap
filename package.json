@@ -36,6 +36,7 @@
     "grunt-newer": "^0.7.0",
     "grunt-contrib-imagemin": "^0.6.1",
     "grunt-responsive-images": "^0.1.1",
-    "grunt-contrib-jasmine": "^0.6.3"
+    "grunt-contrib-jasmine": "^0.6.3",
+    "grunt-contrib-yuidoc": "^0.5.2"
   }
 }

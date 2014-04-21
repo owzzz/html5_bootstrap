@@ -272,6 +272,23 @@ module.exports = function(grunt) {
         }
     },
 
+    // YUIDoc
+    // Compile YUIDoc Documentation.
+    // https://github.com/gruntjs/grunt-contrib-yuidoc
+
+    yuidoc: {
+      compile: {
+        name: '<%= pkg.name %>',
+        description: '<%= pkg.description %>',
+        version: '<%= pkg.version %>',
+        url: '<%= pkg.homepage %>',
+        options: {
+          paths: DEV_PATH,
+          outdir: DIST_PATH + 'docs/'
+        }
+      }
+    },
+
     // Watch
     // Run tasks whenever watched files change.
     // https://github.com/gruntjs/grunt-contrib-watch
