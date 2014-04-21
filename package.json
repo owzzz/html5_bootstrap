@@ -1,12 +1,20 @@
 {
-  "name": "HTML5 Bootstrap",
+  "name": "HTML5Bootstrap",
   "version": "0.0.1",
   "description": "Description",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["Tooling", "automation", "bootstrap", "html5", "grunt", "optimisation", "sass"],
+  "keywords": [
+    "Tooling",
+    "automation",
+    "bootstrap",
+    "html5",
+    "grunt",
+    "optimisation",
+    "sass"
+  ],
   "author": "Owain Llewellyn",
   "license": "ISC",
   "devDependencies": {
@@ -27,6 +35,7 @@
     "grunt-contrib-htmlmin": "^0.2.0",
     "grunt-newer": "^0.7.0",
     "grunt-contrib-imagemin": "^0.6.1",
-    "grunt-responsive-images": "^0.1.1"
+    "grunt-responsive-images": "^0.1.1",
+    "grunt-contrib-jasmine": "^0.6.3"
   }
 }

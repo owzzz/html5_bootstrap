@@ -258,6 +258,20 @@ module.exports = function(grunt) {
       }
     },
 
+
+    // Jasmine
+    // Jasmine is a behavior-driven development framework for testing JavaScript code..
+    // https://github.com/pivotal/jasmine
+
+    jasmine: {
+        // Your project's source files
+        src: 'dev/**/*.js',
+        options : {
+          // Your Jasmine spec files
+          specs: 'dev/specs/**/*.js' 
+        }
+    },
+
     // Watch
     // Run tasks whenever watched files change.
     // https://github.com/gruntjs/grunt-contrib-watch
@@ -287,9 +301,9 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:modernizr', 'newer:uglify:dev', 'newer:sass:dev', 'autoprefixer', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
+  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:modernizr', 'newer:uglify:dev', 'jasmine', 'newer:sass:dev', 'autoprefixer', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
 
-  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'newer:uglify:modernizr', 'uglify:dist', 'sass:dist', 'autoprefixer', 'htmlmin:dist', 'imagemin:dist', 'responsive_images']);
+  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'newer:uglify:modernizr', 'uglify:dist', 'jasmine', 'sass:dist', 'autoprefixer', 'htmlmin:dist', 'imagemin:dist', 'responsive_images']);
 
   grunt.registerTask('server', ['connect']);
 
