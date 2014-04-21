@@ -317,10 +317,12 @@ module.exports = function(grunt) {
       }
     }
   });
+  
+  grunt.registerTask('docs', ['yuidoc']);
 
   grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:modernizr', 'newer:uglify:dev', 'jasmine', 'newer:sass:dev', 'autoprefixer', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
 
-  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'newer:uglify:modernizr', 'uglify:dist', 'jasmine', 'sass:dist', 'autoprefixer', 'htmlmin:dist', 'imagemin:dist', 'responsive_images']);
+  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'newer:uglify:modernizr', 'uglify:dist', 'jasmine', 'sass:dist', 'autoprefixer', 'htmlmin:dist', 'imagemin:dist', 'responsive_images', 'yuidoc']);
 
   grunt.registerTask('server', ['connect']);
 

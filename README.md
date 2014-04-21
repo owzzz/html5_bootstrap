@@ -92,9 +92,9 @@ Jasmine will come installed as part of the ```npm install``` task. PhantomJS, wi
 
 #### Starting grunt
 
-We have three targets we can run ```dev```, ```dist```, ```server```.
+We have four targets we can run ```dev```, ```dist```, ```server```, and ```docs```.
 
-```dev``` is pretty optimised but gives you source maps and does not optimise images as much as ```dist```. The dist target is highly optimised and is production ready. Use this when building to a production server. Spinning up a simple http server you'll use the ```server``` target. It comes with live reload turned on.
+```dev``` is pretty optimised but gives you source maps and does not optimise images as much as ```dist```. The dist target is highly optimised and is production ready. Use this when building to a production server. Spinning up a simple http server you'll use the ```server``` target. It comes with live reload turned on. The final target ```docs``` produces a one time hit of the yui docs and places it in the dist folder. this same task will also run as part of the ```dist``` task mentioned previously.
 
 
 The tasks are pretty self explanatory, but for the purpose of this documentation I've listed them below:
