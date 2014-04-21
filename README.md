@@ -117,6 +117,12 @@ grunt prod
 grunt server
 ```
 
+#### Docs target
+
+```
+grunt docs
+```
+
 #### FAQ
 
 
