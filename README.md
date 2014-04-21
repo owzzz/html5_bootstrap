@@ -79,13 +79,9 @@ brew install GraphicsMagick
 
 To run tests we need PhantomJS and jasmine
 
-First we'll need to get Grunt's jasmine plugin.
 
-```
- npm install grunt-jasmine-runner
- ```
 
- Next we need PhantomJS, this installed using brew, see previous step to install Brew if you don't already have it.
+Jasmine will come installed as part of the ```npm install``` task. PhantomJS, will need to be installed using brew, see previous step to install Brew if you don't already have it.
 
  ```
  brew install phantomjs
