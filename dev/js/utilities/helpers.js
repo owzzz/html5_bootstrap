@@ -47,7 +47,7 @@
 		*/
 
 		isTouch: function() {
-			return (this.eventClick === "touchend")
+			return (this.eventClick === "touchend");
 		},
 
 		/**
