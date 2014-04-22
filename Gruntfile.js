@@ -4,6 +4,7 @@ module.exports = function(grunt) {
   var DIST_PATH = "./dist/";
   var DEV_PATH  = "./dev/";
 
+  grunt.loadNpmTasks('assemble');
   require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
@@ -24,13 +25,6 @@ module.exports = function(grunt) {
     copy: {
       dist: {
         files: [
-          {
-            expand: true, 
-            cwd: 'dev/', 
-            src: ['index.html'], 
-            dest: DIST_PATH, 
-            filter: 'isFile'
-          },
           {
             expand: true, 
             cwd: 'dev/', 
@@ -178,13 +172,16 @@ module.exports = function(grunt) {
           removeComments: true,
           collapseWhitespace: true
         },
-        files: {                                   
-          'dist/index.html': 'dev/index.html'
+        files: {
+          expand: true,
+          cwd: DIST_PATH,
+          src: ['*.html'], 
+          dest: DIST_PATH            
         }
       },
       dev: {
         files: {
-          'dist/index.html': 'dev/index.html'
+          DIST_PATH : DIST_PATH + '*.html'           
         }
       }
     },
@@ -289,6 +286,41 @@ module.exports = function(grunt) {
       }
     },
 
+    // Assemble
+    // Static site generator for Node.js, Grunt.js, and Yeoman (and soon, Gulp).
+    // https://github.com/assemble/assemble
+
+    assemble: {
+      options: {
+        assets: DEV_PATH,
+        partials: [DEV_PATH + 'views/partials/**/*.hbs'],
+        layout: [DEV_PATH + 'views/layout/default.hbs'],
+        data: [DEV_PATH + 'data/*.{json,yml}']
+      },
+      dev: {
+        options: {
+          production: false
+        },
+        files: [{
+          expand: true,
+          src: ['*.hbs'],
+          cwd: DEV_PATH + 'views/pages/',
+          dest: DIST_PATH
+        }]
+      },
+      dist: {
+        options: {
+          production: true
+        },
+        files: [{
+          expand: true,
+          src: ['views/pages/*.hbs'],
+          cwd: DEV_PATH,
+          dest: DIST_PATH
+        }]
+      }
+    },
+
     // Watch
     // Run tasks whenever watched files change.
     // https://github.com/gruntjs/grunt-contrib-watch
@@ -320,9 +352,9 @@ module.exports = function(grunt) {
   
   grunt.registerTask('docs', ['yuidoc']);
 
-  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:modernizr', 'newer:uglify:dev', 'newer:sass:dev', 'autoprefixer', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
+  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:modernizr', 'newer:uglify:dev', 'newer:sass:dev', 'autoprefixer', 'newer:assemble:dev', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
 
-  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'newer:uglify:modernizr', 'uglify:dist', 'sass:dist', 'autoprefixer', 'htmlmin:dist', 'imagemin:dist', 'responsive_images', 'yuidoc']);
+  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'newer:uglify:modernizr', 'uglify:dist', 'sass:dist', 'autoprefixer', 'newer:assemble:dev', 'htmlmin:dist', 'imagemin:dist', 'responsive_images', 'yuidoc']);
 
   grunt.registerTask('server', ['connect']);
 
