@@ -172,17 +172,20 @@ module.exports = function(grunt) {
           removeComments: true,
           collapseWhitespace: true
         },
-        files: {
+        files: [{
           expand: true,
           cwd: DIST_PATH,
           src: ['*.html'], 
           dest: DIST_PATH            
-        }
+        }]
       },
       dev: {
-        files: {
-          DIST_PATH : DIST_PATH + '*.html'           
-        }
+        files: [{
+          expand: true,
+          cwd: DIST_PATH,
+          src: ['*.html'], 
+          dest: DIST_PATH            
+        }]
       }
     },
 
@@ -340,8 +343,8 @@ module.exports = function(grunt) {
         tasks: ['newer:jshint', 'newer:browserify', 'newer:uglify:dev']
       },
       html: {
-        files: [DEV_PATH + '**/*.html'],
-        tasks: ['copy', 'newer:htmlmin:dev']
+        files: [DEV_PATH + 'views/**/*.hbs'],
+        tasks: ['newer:assemble:dev', 'newer:htmlmin:dev']
       },
       images: {
         files: [DEV_PATH + 'img/**/*.{jpg,gif,png}'],
