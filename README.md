@@ -22,6 +22,7 @@ Setting up Grunt tooling at the start of projects can be tedious and time consum
 * [PhantomJS](http://phantomjs.org/)
 * [Assemble](http://assemble.io/)
 * [YUIDocs](https://github.com/gruntjs/grunt-contrib-yuidoc)
+* Style Guide
 
 #### Libraries
 
