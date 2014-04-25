@@ -64,10 +64,10 @@ module.exports = function(grunt) {
       styleGuide: {
         options: {                      
           style: 'compressed',
-          sourcemap: true
+          sourcemap: false
         },
         files: {
-          'dist/style_guide/css/main.css' : 'dev/style_guide/sass/**/*.scss'
+          'dist/style_guide/css/main.css' : 'dev/style_guide/sass/*.{scss,sass}'
         }  
       },                      
       dist: {                          
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
           sourcemap: false
         },
         files: {
-          'dist/css/main.css' : 'dev/sass/**/*.scss'
+          'dist/css/main.css' : 'dev/sass/**/*.{scss,sass}'
         }
       },
       dev: {                          
@@ -85,7 +85,7 @@ module.exports = function(grunt) {
           sourcemap: true
         },
         files: {
-          'dist/css/main.css' : 'dev/sass/**/*.scss'
+          'dist/css/main.css' : 'dev/sass/**/*.{scss,sass}'
         }
       }
     },
