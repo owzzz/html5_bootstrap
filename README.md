@@ -118,6 +118,12 @@ grunt prod
 grunt server
 ```
 
+#### Style Guide target
+
+```
+grunt styleguide
+```
+
 #### Docs target
 
 ```

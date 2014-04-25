@@ -300,6 +300,17 @@ module.exports = function(grunt) {
         layout: [DEV_PATH + 'views/layout/default.hbs'],
         data: [DEV_PATH + 'data/*.{json,yml}']
       },
+      styleGuide: {
+        options: {
+          production: false
+        },
+        files: [{
+          expand: true,
+          src: ['*.hbs'],
+          cwd: DEV_PATH + 'style_guide/pages/',
+          dest: DIST_PATH + 'style_guide/'
+        }]
+      },
       dev: {
         options: {
           production: false
@@ -353,6 +364,8 @@ module.exports = function(grunt) {
     }
   });
   
+  grunt.registerTask('styleguide', ['clean', 'assemble:styleGuide']);
+
   grunt.registerTask('docs', ['yuidoc']);
 
   grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:modernizr', 'newer:uglify:dev', 'newer:sass:dev', 'autoprefixer', 'newer:assemble:dev', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
