@@ -3,7 +3,11 @@
 
 ### SASS
 
-The Sass folder contains two files ```layout.scss``` and ```styleguide.scss``` styles in these files should only impact the styleguide itself and should not bleed out to the wider application / site.
+The Sass folder contains three files ```layout.scss```, ```vars``` and ```styleguide.scss``` styles in these files should only impact the styleguide itself and should not bleed out to the wider application / site.
+
+
+##### Vars
+Variables that can be shared across elements in the style guide can be placed in here. These variables should not be referenced in the parent site.
 
 ##### Layout
 

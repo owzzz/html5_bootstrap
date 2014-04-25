@@ -60,7 +60,16 @@ module.exports = function(grunt) {
     // Compile Sass to CSS.
     // https://github.com/gruntjs/grunt-contrib-sass
 
-    sass: {                         
+    sass: { 
+      styleGuide: {
+        options: {                      
+          style: 'compressed',
+          sourcemap: true
+        },
+        files: {
+          'dist/style_guide/css/main.css' : 'dev/style_guide/sass/**/*.scss'
+        }  
+      },                      
       dist: {                          
         options: {                      
           style: 'compressed',
@@ -370,7 +379,7 @@ module.exports = function(grunt) {
     }
   });
   
-  grunt.registerTask('styleguide', ['clean', 'assemble:styleGuide']);
+  grunt.registerTask('styleguide', ['clean', 'sass:styleGuide', 'assemble:styleGuide']);
 
   grunt.registerTask('docs', ['yuidoc']);
 
