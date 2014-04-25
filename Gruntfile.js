@@ -294,14 +294,12 @@ module.exports = function(grunt) {
     // https://github.com/assemble/assemble
 
     assemble: {
-      options: {
-        assets: DEV_PATH,
-        partials: [DEV_PATH + 'views/partials/**/*.hbs'],
-        layout: [DEV_PATH + 'views/layout/default.hbs'],
-        data: [DEV_PATH + 'data/*.{json,yml}']
-      },
       styleGuide: {
         options: {
+          assets: DEV_PATH,
+          partials: [DEV_PATH + 'style_guide/partials/**/*.hbs'],
+          layout: [DEV_PATH + 'style_guide/layout/default.hbs'],
+          data: [DEV_PATH + 'data/*.{json,yml}'],
           production: false
         },
         files: [{
@@ -313,6 +311,10 @@ module.exports = function(grunt) {
       },
       dev: {
         options: {
+          assets: DEV_PATH,
+          partials: [DEV_PATH + 'views/partials/**/*.hbs'],
+          layout: [DEV_PATH + 'views/layout/default.hbs'],
+          data: [DEV_PATH + 'data/*.{json,yml}'],
           production: false
         },
         files: [{
@@ -324,6 +326,10 @@ module.exports = function(grunt) {
       },
       dist: {
         options: {
+          assets: DEV_PATH,
+          partials: [DEV_PATH + 'views/partials/**/*.hbs'],
+          layout: [DEV_PATH + 'views/layout/default.hbs'],
+          data: [DEV_PATH + 'data/*.{json,yml}'],
           production: true
         },
         files: [{
