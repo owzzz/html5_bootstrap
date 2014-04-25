@@ -1,0 +1,16 @@
+.secondary-nav {
+	ul {
+		margin: 0 auto;
+		padding: 0;
+
+		li {
+			list-style-type: disc;
+			line-height: $base-line-height + 10;
+			
+			a {
+				text-decoration: none;
+				text-transform: capitalize;
+			}
+		}
+	}
+}

@@ -45,7 +45,7 @@
 // Simple Button
 //************************************************************************//
 @mixin simple($base-color, $grayscale: false) {
-  $color:         hsl(0, 0, 100%);
+  $color:         hsl(0, 0, 100%) !global;
   $border:        adjust-color($base-color, $saturation:  9%,  $lightness: -14%);
   $inset-shadow:  adjust-color($base-color, $saturation: -8%,  $lightness:  15%);
   $stop-gradient: adjust-color($base-color, $saturation:  9%,  $lightness: -11%);

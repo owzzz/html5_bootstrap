@@ -1,10 +1,10 @@
 // Colours
-$colBase: #ff0000; // Red - Light
-$colSecondary: #ed1d24;
+$base-color: #ff0000;
+$base-accent-color: #ed1d24;
 
-$colBlack: #242424;
-$colGrey: #f6f6f6;
-$colWhite: #FFF;
+$col-black: #000;
+$col-grey: #f6f6f6;
+$col-white: #FFF;
 
 // Type Based Colours
 $mainTitleCopy: #ed1d24;
@@ -12,15 +12,15 @@ $mainSubTitleCopy: #4d4f53;
 $bodyCopy: #868686;
 
 // BreakPoints
-$bpMobileMin: 320px;
-$bpMobileMax: 640px;
+$bp-mobile-min: 320px;
+$bp-mobile-max: 640px;
 
-$bpTabletMin: 641px;
-$bpTabletMax: 1280px;
+$bp-tablet-min: 641px;
+$bp-tablet-max: 1280px;
 
-$bpDesktopMin: 1024px;
-$bpDesktopMid: 1280px;
-$bpDesktopMax: 1440px; 
+$bp-desktop-min: 1024px;
+$bp-desktop-lrg: 1280px;
+$bp-desktop-max: 1440px; 
 
 // Spacing
 $verticalSpacingSml: 10px;
@@ -29,8 +29,12 @@ $verticalSpacingLrg: 40px;
 $verticalSpacingXl: 60px;
 
 // Font sizes
-$titleFontSize: 50px;
-$subTitleFontSize: 20px;
-$heroFontSize: 26px;
-$bodyFontSize: 14px;
+$base-font-size: 14px;
+$title-font-size: 50px;
+$sub-title-font-size: 20px;
+$hero-font-size: 26px;
+
+// Line heights
+$base-line-height: 16px;
+
 

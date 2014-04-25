@@ -360,6 +360,10 @@ module.exports = function(grunt) {
           port: 35729
         }
       },
+      styleGuide: {
+        files: [DEV_PATH + 'style_guide/sass/**/*.{sass,scss}', DEV_PATH + 'style_guide/**/*.hbs'],
+        tasks: ['sass:styleGuide', 'newer:assemble:styleGuide']
+      },
       styles: {
         files: [DEV_PATH + 'sass/**/*.{sass,scss}'],
         tasks: ['newer:sass:dev']
@@ -379,7 +383,7 @@ module.exports = function(grunt) {
     }
   });
   
-  grunt.registerTask('styleguide', ['clean', 'sass:styleGuide', 'assemble:styleGuide']);
+  grunt.registerTask('styleguide', ['clean', 'sass:styleGuide', 'assemble:styleGuide', 'watch']);
 
   grunt.registerTask('docs', ['yuidoc']);
 

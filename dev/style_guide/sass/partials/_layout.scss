@@ -1,7 +1,41 @@
-//App / Bootstrapper styles
-@import "../../sass/modules/all";
-@import "../../sass/partials/all";
-@import "../../sass/vendor/all";
-
 // Style Guide Specific Styles
-@import "vars";
+@import "variables";
+
+.sg-wrapper {
+	max-width: $maxContainerWidth;
+	margin: 0 auto;
+	@include outer-container;
+}
+
+.sg-left-col {
+	padding: $container-padding-md;
+	float: left;
+	width: 29%;
+	margin-right: 10px;
+}
+
+.sg-right-col {
+	padding: $container-padding-md;
+	float: left;
+	width: 69%;
+	margin-left: 10px;
+}
+
+.sg-example {
+	padding: $container-padding-md;
+	border:1px solid $col-black;
+}
+.sg-example:after {
+	content: "Example";
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	font-size: 12px;
+	font-size: 1.2rem;
+	color: $col-grey;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-family: "Trade Gothic for Nike 365 BdCn", Hevitica, Arial, sans-serif;
+}
+
+
