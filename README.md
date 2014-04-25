@@ -126,6 +126,13 @@ grunt docs
 
 #### FAQ
 
+#### Road Map
+
+A list of upcoming features for consideration. Feel free to add feature requests.
+
+* Sonar Integration
+* Custom Yeoman Generator
+
 
 #### Change log
 
