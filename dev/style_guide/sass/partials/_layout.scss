@@ -22,16 +22,16 @@
 }
 
 .sg-example {
-	padding: $container-padding-md;
-	border:1px solid $col-black;
+	position: relative;
+	padding: $container-padding-lrg;
+	border:1px solid $col-grey;
 }
 .sg-example:after {
 	content: "Example";
 	position: absolute;
 	top: 15px;
 	left: 15px;
-	font-size: 12px;
-	font-size: 1.2rem;
+	font-size: 8px;
 	color: $col-grey;
 	text-transform: uppercase;
 	letter-spacing: 1px;
