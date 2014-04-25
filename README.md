@@ -131,7 +131,7 @@ grunt docs
 A list of upcoming features for consideration. Feel free to add feature requests.
 
 * Sonar Integration
-* Custom Yeoman Generator
+* Custom Yeoman Generator (AngularJS or HTML5)
 
 
 #### Change log
