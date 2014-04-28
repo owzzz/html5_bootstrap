@@ -23,7 +23,7 @@
 		* @return {Number} Returns Number or NAN
 		*/
 
-		AddTwoNumbers: function(a,b) {
+		addTwoNumbers: function(a,b) {
 			return (a+b);
 		}
 	};
