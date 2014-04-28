@@ -1,4 +1,4 @@
-# HTML5 Bootstrap
+# HTML5 Bootstrap [![Build Status](https://travis-ci.org/owzzz/html5_bootstrap.svg)](https://travis-ci.org/owzzz/html5_bootstrap/)
 
 ####Introduction
 
