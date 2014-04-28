@@ -342,12 +342,12 @@ module.exports = function(grunt) {
                 separator: '\n',
                 sonar: {
                     host: {
-                        url: 'http://sonar.akqa.net'
+                        url: 'ENTER URL HERE'
                     },
                     jdbc: {
-                        url: 'jdbc:mysql://sonar.akqa.net:3306/sonar?autoReconnect=true&useUnicode=true&characterEncoding=utf8',
-                        username: 'sonar',
-                        password: 'S0n0r@10'
+                        url: 'ENTER URL HERE',
+                        username: 'USERNAME',
+                        password: 'PASSWORD'
                     },
 
                     projectKey: 'html5-bootstrapper',
