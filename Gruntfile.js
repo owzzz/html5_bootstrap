@@ -353,7 +353,8 @@ module.exports = function(grunt) {
                     projectKey: 'html5-bootstrapper',
                     projectName: 'HTML5 BootStrapper',
                     projectVersion: '0.0.1',
-                    sources: ['dev/js/modules', 'dev/js/utilities'].join(','),
+                    sources: ['dev/js'].join(','),
+                    exclusions: 'dev/js/vendor',
                     language: 'js',
                     sourceEncoding: 'UTF-8'
                 }
