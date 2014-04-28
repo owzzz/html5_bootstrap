@@ -137,6 +137,6 @@ A list of upcoming features for consideration. Feel free to add feature requests
 
 #### Change log
 
-I've got nothing.
+Recent Updates to repo
 
-* Updated item **(DATE)**
+* Added Istanbul Code Coverage (28/04/2014)
