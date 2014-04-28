@@ -19,6 +19,7 @@ Setting up Grunt tooling at the start of projects can be tedious and time consum
 * [HTML Minification](https://github.com/gruntjs/grunt-contrib-htmlmin‎)
 * [Watch / Live reload](https://github.com/gruntjs/grunt-contrib-watch)
 * [Jasmine](https://github.com/gruntjs/grunt-contrib-jasmine)
+* [Istanbul Code Coverage](https://github.com/maenu/grunt-template-jasmine-istanbul)
 * [PhantomJS](http://phantomjs.org/)
 * [Assemble](http://assemble.io/)
 * [YUIDocs](https://github.com/gruntjs/grunt-contrib-yuidoc)
