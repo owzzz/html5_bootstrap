@@ -139,4 +139,5 @@ A list of upcoming features for consideration. Feel free to add feature requests
 
 Recent Updates to repo
 
+* Added Travis Build File (28/04/2014)
 * Added Istanbul Code Coverage (28/04/2014)
