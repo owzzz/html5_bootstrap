@@ -3,6 +3,7 @@ node_js:
   - "0.10"
 before_install:
   - bundle install
+  - ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
   - brew install GraphicsMagick
   - brew install phantomjs
 
