@@ -264,11 +264,17 @@ module.exports = function(grunt) {
     // https://github.com/pivotal/jasmine
 
     jasmine: {
-        // Your project's source files
-        src: 'dev/**/*.js',
-        options : {
-          // Your Jasmine spec files
-          specs: 'dev/specs/**/*.js' 
+        coverage: {
+            src: ['dev/js/**/*.js', '!dev/js/vendor/**/*.js'],
+            options: {
+                specs: ['dev/specs/**/*.js'],
+                template: require('grunt-template-jasmine-istanbul'),
+                templateOptions: {
+                    type: 'lcov',
+                    coverage: 'dist/coverage/coverage.lcov',
+                    report: 'dist/coverage'
+                }
+            }
         }
     },
 
