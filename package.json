@@ -43,6 +43,7 @@
     "bin-wrapper": "~0.1.3",
     "chalk": "~0.2.0",
     "grunt-template-jasmine-istanbul": "^0.3.0",
-    "load-grunt-tasks": "^0.4.0"
+    "load-grunt-tasks": "^0.4.0",
+    "grunt-sonar-runner": "^2.3.1"
   }
 }

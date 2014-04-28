@@ -331,6 +331,36 @@ module.exports = function(grunt) {
       }
     },
 
+    // Sonar Runner
+    // Sonar Analysis Runner from grunt. The major version is kept in sync with sonar runner distribution version.
+    // https://www.npmjs.org/package/grunt-sonar-runner
+
+    sonarRunner: {
+        analysis: {
+            options: {
+                debug: true,
+                separator: '\n',
+                sonar: {
+                    host: {
+                        url: 'http://sonar.akqa.net'
+                    },
+                    jdbc: {
+                        url: 'jdbc:mysql://sonar.akqa.net:3306/sonar?autoReconnect=true&useUnicode=true&characterEncoding=utf8',
+                        username: 'sonar',
+                        password: 'S0n0r@10'
+                    },
+
+                    projectKey: 'html5-bootstrapper',
+                    projectName: 'HTML5 BootStrapper',
+                    projectVersion: '0.0.1',
+                    sources: ['dev/js/modules', 'dev/js/utilities'].join(','),
+                    language: 'js',
+                    sourceEncoding: 'UTF-8'
+                }
+            }
+        }
+    },
+
     // Watch
     // Run tasks whenever watched files change.
     // https://github.com/gruntjs/grunt-contrib-watch
@@ -362,9 +392,9 @@ module.exports = function(grunt) {
   
   grunt.registerTask('docs', ['yuidoc']);
 
-  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:modernizr', 'newer:uglify:dev', 'newer:sass:dev', 'autoprefixer', 'newer:assemble:dev', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
+  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:modernizr', 'newer:uglify:dev', 'jasmine', 'newer:sass:dev', 'autoprefixer', 'newer:assemble:dev', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
 
-  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'newer:uglify:modernizr', 'uglify:dist', 'sass:dist', 'autoprefixer', 'newer:assemble:dev', 'htmlmin:dist', 'imagemin:dist', 'responsive_images', 'yuidoc']);
+  grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'newer:uglify:modernizr', 'uglify:dist', 'jasmine', 'sass:dist', 'autoprefixer', 'newer:assemble:dev', 'htmlmin:dist', 'imagemin:dist', 'responsive_images', 'yuidoc', 'sonarRunner']);
 
   grunt.registerTask('server', ['connect']);
 
