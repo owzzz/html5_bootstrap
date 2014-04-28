@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "0.10"
+before_install:
+  - gem install bundler
+  - bundle install
+  - npm install
+  - bower install
+  - ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  - brew install GraphicsMagick
+  - brew install phantomjs
+
+script: "grunt dev" 
