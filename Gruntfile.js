@@ -4,8 +4,9 @@ module.exports = function(grunt) {
   var DIST_PATH = "./dist/";
   var DEV_PATH  = "./dev/";
 
-  grunt.loadNpmTasks('assemble');
-  require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+  require('load-grunt-tasks')(grunt, {
+    pattern: ['grunt-*', 'assemble', '!grunt-template-jasmine-istanbul']
+  });
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
