@@ -4,10 +4,10 @@ node_js:
 before_install:
   - bundle install
   - ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-  
-install:
   - brew install GraphicsMagick
   - brew install phantomjs
+
+install:
   - npm install -g bower
   - npm install
   - bower install
