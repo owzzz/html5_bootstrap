@@ -15,7 +15,8 @@ module.exports = function(grunt) {
     // https://github.com/gruntjs/grunt-contrib-clean
 
     clean: {
-      dist: [DIST_PATH]
+      dist: [DIST_PATH],
+      styleGuide: [DIST_PATH + 'style_guide']
     },
 
     // Copy
@@ -383,7 +384,7 @@ module.exports = function(grunt) {
     }
   });
   
-  grunt.registerTask('styleguide', ['clean', 'sass:styleGuide', 'assemble:styleGuide', 'watch']);
+  grunt.registerTask('styleguide', ['clean:styleGuide', 'sass:styleGuide', 'assemble:styleGuide', 'watch']);
 
   grunt.registerTask('docs', ['yuidoc']);
 
