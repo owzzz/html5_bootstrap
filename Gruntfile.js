@@ -310,7 +310,8 @@ module.exports = function(grunt) {
           partials: [DEV_PATH + 'style_guide/partials/**/*.hbs'],
           layout: [DEV_PATH + 'style_guide/layout/default.hbs'],
           data: [DEV_PATH + 'data/*.{json,yml}', DEV_PATH + 'style_guide/data/**/*.{json,yaml}'],
-          production: false
+          production: false,
+          postprocess: require('pretty')
         },
         files: [{
           expand: true,
@@ -350,7 +351,7 @@ module.exports = function(grunt) {
         }]
       }
     },
-    
+
 
     // Watch
     // Run tasks whenever watched files change.
