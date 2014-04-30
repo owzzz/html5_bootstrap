@@ -15,6 +15,10 @@
 
 @media only screen and (min-width: $bp-tablet-min) {
 	.main-nav {
+		padding-top: 17px; 
+		background: $col-black;
+		margin-bottom: $container-padding-md;
+		
 		ul {
 			margin: 0 auto;
 			width: 405px;
@@ -28,7 +32,7 @@
 				a {
 					text-decoration: none;
 					text-transform: uppercase;
-					color: $col-black;
+					color: $col-white;
 				}
 			}
 		}

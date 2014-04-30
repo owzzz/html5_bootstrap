@@ -8,17 +8,16 @@
 }
 
 .sg-left-col {
-	padding: $container-padding-md;
 	float: left;
 	width: 29%;
 	margin-right: 1%;
 }
 
 .sg-right-col {
-	padding: $container-padding-md;
+	padding: 0 $container-padding-md;
 	float: left;
 	width: 69%;
-	margin-left: 1%;
+	margin: 0 0 $container-padding-md 1%;
 }
 
 .sg-example {
