@@ -1,0 +1,36 @@
+@import "../partials/variables";
+
+
+/* MOBILE & DEFAULT STYLES
+ *************************************************************/
+
+.main-nav {
+	height: 50px;
+
+	
+}
+
+/* DESKTOP STYLES
+ *************************************************************/
+
+@media only screen and (min-width: $bp-tablet-min) {
+	.main-nav {
+		ul {
+			margin: 0 auto;
+			width: 485px;
+			overflow: hidden;
+			
+			li {
+				float: left;
+				list-style-type: none;
+				margin-right: 5%;
+			
+				a {
+					text-decoration: none;
+					text-transform: uppercase;
+					color: $col-black;
+				}
+			}
+		}
+	}
+}

@@ -9,7 +9,7 @@
 	* @class module
 	* @constructor
 	*/
-
+	
 	var moduleFeature = {
 
 		/**

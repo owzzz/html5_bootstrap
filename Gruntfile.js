@@ -125,9 +125,9 @@ module.exports = function(grunt) {
       modernizr: {
         options: {
           compress: {
-            drop_console: true
+            drop_console: false
           },
-          mangle: true,
+          mangle: false,
           sourceMap: false
         },
         files: {
@@ -309,7 +309,7 @@ module.exports = function(grunt) {
           assets: DEV_PATH,
           partials: [DEV_PATH + 'style_guide/partials/**/*.hbs'],
           layout: [DEV_PATH + 'style_guide/layout/default.hbs'],
-          data: [DEV_PATH + 'data/*.{json,yml}'],
+          data: [DEV_PATH + 'data/*.{json,yml}', DEV_PATH + 'style_guide/data/**/*.{json,yaml}'],
           production: false
         },
         files: [{
@@ -350,6 +350,7 @@ module.exports = function(grunt) {
         }]
       }
     },
+    
 
     // Watch
     // Run tasks whenever watched files change.
@@ -361,13 +362,17 @@ module.exports = function(grunt) {
           port: 35729
         }
       },
+      grunt: {
+        files: ['Gruntfile.js'],
+        tasks: ['dev']
+      },
       styleGuide: {
         files: [DEV_PATH + 'style_guide/sass/**/*.{sass,scss}', DEV_PATH + 'style_guide/**/*.hbs'],
         tasks: ['sass:styleGuide', 'newer:assemble:styleGuide']
       },
       styles: {
         files: [DEV_PATH + 'sass/**/*.{sass,scss}'],
-        tasks: ['newer:sass:dev']
+        tasks: ['newer:sass:dev', 'sass:styleGuide']
       },
       scripts: {
         files: [DEV_PATH + 'js/**/*.js'],
