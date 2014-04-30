@@ -22,14 +22,14 @@
 
 .sg-example {
 	position: relative;
-	padding: $container-padding-lrg;
+	padding: $container-padding-xlrg $container-padding-md;
 	border:1px solid $col-grey;
 }
 .sg-example:after {
 	content: "Example";
 	position: absolute;
-	top: 15px;
-	left: 15px;
+	top: $container-padding-md;
+	left: $container-padding-md;
 	font-size: 8px;
 	color: $col-grey;
 	text-transform: uppercase;
