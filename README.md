@@ -134,6 +134,7 @@ A list of upcoming features for consideration. Feel free to add feature requests
 * Sonar Integration
 * Custom Yeoman Generator (AngularJS or HTML5)
 
+<iframe width="560" height="315" src="//www.youtube.com/embed/hzyz3u3dlTg" frameborder="0" allowfullscreen></iframe>
 
 #### Change log
 
