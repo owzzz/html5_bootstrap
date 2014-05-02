@@ -351,7 +351,7 @@ module.exports = function(grunt) {
       },
       html: {
         files: [DEV_PATH + 'views/**/*.hbs'],
-        tasks: ['newer:assemble:dev', 'newer:htmlmin:dev']
+        tasks: ['assemble:dev', 'htmlmin:dev']
       },
       images: {
         files: [DEV_PATH + 'img/**/*.{jpg,gif,png}'],
