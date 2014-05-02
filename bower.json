@@ -17,8 +17,5 @@
   ],
   "dependencies": {
     "modernizr": "~2.7.2"
-  },
-  "devDependencies": {
-    "twitter-bootstrap-sass": "~3.1.1"
   }
 }
