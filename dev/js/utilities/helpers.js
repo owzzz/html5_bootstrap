@@ -1,7 +1,6 @@
 (function(window, undefined) {
 	"use strict";
 
-	var module = module || null;
 	/**
 	* This is our helpers singleton. Anything that can be shared across modules can be used here.
 	*
@@ -48,6 +47,14 @@
 
 		isTouch: function() {
 			return (this.eventClick === "touchend");
+		},
+		
+		transEndEventNames: {
+			'WebkitTransition': 'webkitTransitionEnd',
+			'MozTransition': 'transitionend',
+			'OTransition': 'oTransitionEnd',
+			'msTransition': 'MSTransitionEnd',
+			'transition': 'transitionend'
 		},
 
 		/**
