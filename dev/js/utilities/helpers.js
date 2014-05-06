@@ -70,13 +70,13 @@
 			return; 
 		},
 
-    	eventStart: (typeof window.ontouchstart === "undefined") ? 'mousedown' : 'touchstart',
+    		eventStart: (typeof window.ontouchstart === "undefined") ? 'mousedown' : 'touchstart',
 
 		eventEnd: (typeof window.ontouchstart === "undefined") ? 'mouseup' : 'touchend',
 
-    	eventMove: (typeof window.ontouchstart === "undefined") ? 'mousemove' : 'touchmove',
+    		eventMove: (typeof window.ontouchstart === "undefined") ? 'mousemove' : 'touchmove',
 
-    	eventClick: (typeof window.ontouchstart === "undefined") ? 'click' : 'touchend'
+    		eventClick: (typeof window.ontouchstart === "undefined") ? 'click' : 'touchend'
 	};
 
 	// Check if we have Browserify
