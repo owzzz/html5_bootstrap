@@ -37,6 +37,18 @@ module.exports = function(grunt) {
             cwd: 'dev/', 
             src: ['img/**'], 
             dest: DIST_PATH 
+          },
+          {
+            expand: true, 
+            cwd: 'dev/', 
+            src: ['data/**'], 
+            dest: DIST_PATH 
+          },
+          {
+            expand: true, 
+            cwd: 'dev/', 
+            src: ['favicon.ico'], 
+            dest: DIST_PATH 
           }
         ]
       }
@@ -68,16 +80,19 @@ module.exports = function(grunt) {
           sourcemap: false
         },
         files: {
-          'dist/css/main.css' : 'dev/sass/**/*.scss'
+          'dist/css/main.css' : 'dev/sass/main.scss'
         }
       },
       dev: {                          
         options: {                      
-          style: 'compressed',
-          sourcemap: true
+          style: 'expanded',
+          sourcemap: true,
+          require: 'susy',
+          trace: true,
+          debugInfo: true
         },
         files: {
-          'dist/css/main.css' : 'dev/sass/**/*.scss'
+          'dist/css/main.css' : 'dev/sass/main.scss'
         }
       }
     },
@@ -89,7 +104,7 @@ module.exports = function(grunt) {
     browserify: {
       dist: {
         files: {
-          'dist/js/main.min.js' : [DEV_PATH + 'modules/module.js']
+          'dist/js/main.min.js' : [DEV_PATH + 'js/modules/module.js']
         }
       }
     },
@@ -230,7 +245,7 @@ module.exports = function(grunt) {
       options: {
         engine: 'gm',
         sizes: [{ name: 'small', width: 320 },{ name: 'medium', width: 640 },{ name: 'large', width: 1024 }],
-        quality: 20,
+        quality: 70,
         aspectRatio: true
       },
       dist: {
@@ -341,9 +356,17 @@ module.exports = function(grunt) {
           port: 35729
         }
       },
+      data: {
+        files: [DEV_PATH + "data/**/*.{json,yaml}"],
+        tasks: ['dev']
+      },
+      gruntFile: {
+        files: ['Gruntfile.js'],
+        tasks: ['dev']
+      },
       styles: {
         files: [DEV_PATH + 'sass/**/*.{sass,scss}'],
-        tasks: ['newer:sass:dev']
+        tasks: ['sass:dev']
       },
       scripts: {
         files: [DEV_PATH + 'js/**/*.js'],
@@ -355,7 +378,7 @@ module.exports = function(grunt) {
       },
       images: {
         files: [DEV_PATH + 'img/**/*.{jpg,gif,png}'],
-        tasks: ['newer:responsive_images', 'newer:imagemin:dev']
+        tasks: ['responsive_images', 'imagemin:dev']
       }
     }
   });
