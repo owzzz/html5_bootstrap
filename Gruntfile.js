@@ -93,9 +93,8 @@ module.exports = function(grunt) {
         options: {                      
           style: 'expanded',
           sourcemap: true,
-          require: 'susy',
           trace: true,
-          debugInfo: true
+          debugInfo: false
         },
         files: {
           'dist/css/main.css' : 'dev/sass/main.scss'
