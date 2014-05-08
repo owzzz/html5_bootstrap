@@ -1,7 +1,7 @@
 {
-  "name": "HTML5Bootstrap",
+  "name": "PROJECT_NAME",
   "version": "0.0.1",
-  "description": "Description",
+  "description": "PROJECT_DESCRIPTION",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,7 +20,11 @@
       "browserify-shim"
     ]
   },
-  "author": "Owain Llewellyn",
+  "repository" : { 
+    "type" : "git",
+    "url" : "https://github.com/owzzz/html5_bootstrap.git"
+  },
+  "author": "AUTHOR_NAME",
   "license": "ISC",
   "devDependencies": {
     "grunt": "^0.4.4",
