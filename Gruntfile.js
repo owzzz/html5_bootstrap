@@ -373,7 +373,7 @@ module.exports = function(grunt) {
         tasks: ['newer:jshint', 'newer:browserify', 'newer:uglify:dev']
       },
       html: {
-        files: [DEV_PATH + 'views/**/*.hbs'],
+        files: [DEV_PATH + 'views/**/*.hbs', DEV_PATH + '*.html'],
         tasks: ['assemble:dev', 'htmlmin:dev']
       },
       images: {
