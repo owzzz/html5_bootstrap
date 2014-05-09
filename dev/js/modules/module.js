@@ -1,8 +1,6 @@
 (function(window, undefined) {
 	"use strict";
 
-	var module = module || null;
-	
 	/**
 	* This is my first module/component/widget/plugin.
 	*
