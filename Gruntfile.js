@@ -93,7 +93,6 @@ module.exports = function(grunt) {
         options: {                      
           style: 'expanded',
           sourcemap: true,
-          require: 'susy',
           trace: true,
           debugInfo: true
         },
