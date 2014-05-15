@@ -15,6 +15,12 @@
     "optimisation",
     "sass"
   ],
+  "browser": {
+    "modernizr": "./js/vendor/modernizr/modernizr.js"
+  },
+  "browserify-shim": {
+    "modernizr": "modernizr"
+  },
   "browserify": {
     "transform": [
       "browserify-shim"
