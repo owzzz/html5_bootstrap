@@ -28,8 +28,6 @@ Setting up Grunt tooling at the start of projects can be tedious and time consum
 
 * [Normalize](http://necolas.github.io/normalize.css/)
 * [Modernizr](http://modernizr.com/)
-* [Bourbon](http://bourbon.io/docs/)
-* [Neat Grids](http://neat.bourbon.io)
 
 #### Requirements
 Make sure your have the following installed with these versions or greater when running the bootstrap

@@ -8,6 +8,9 @@
 	* @constructor
 	*/
 
+	var modernizr = require('modernizr');
+	console.log(modernizr);
+
 	var moduleFeature = {
 
 		/**
