@@ -109,7 +109,7 @@ module.exports = function(grunt) {
     browserify: {
       dist: {
         files: {
-          'dist/js/main.min.js' : [DEV_PATH + 'js/modules/module.js']
+          'dist/js/main.min.js' : [DEV_PATH + 'js/main.js']
         }
       }
     },
