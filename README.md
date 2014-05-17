@@ -58,6 +58,12 @@ bundle install
 npm install
 ```
 
+To require libraries that are not in the commonjs format we are going to use napa to get them and wrap them for easy inclusion with browserify.
+
+```
+npm install -g napa
+```
+
 #### Library dependencies (Client Libraries)
 
 ```
@@ -137,5 +143,7 @@ A list of upcoming features for consideration. Feel free to add feature requests
 
 Recent Updates to repo
 
+* Swapped out Browserify-shim for napa (17/05/2014)
+* Removed Neat and Bourbon (13/05/2014)
 * Added Travis Build File (28/04/2014)
 * Added Istanbul Code Coverage (28/04/2014)
