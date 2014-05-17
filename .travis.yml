@@ -9,6 +9,7 @@ before_install:
 
 install:
   - npm install -g bower
+  - npm install -g napa
   - npm install
   - bower install
 
