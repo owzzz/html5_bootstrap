@@ -72,13 +72,16 @@ bower install
 
 #### Image optimisation dependencies
 
-To run optimisations over images we use GraphicsMagick, to install we need to use brew. If you do not have brew installed you'll need to go ahead and get that setup.
+To run optimisations over images we use GraphicsMagick, to install we need to use brew. If your on mac and do not have brew installed you'll need to go ahead and get that setup.
 
 ```
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ```
 
+If your on windows you will need to download the binary and install it manually on your machine. You can get the binary [here](http://www.graphicsmagick.org/download.html).
+
 Now we can install GraphicsMagick
+
 
 ```
 brew install GraphicsMagick
