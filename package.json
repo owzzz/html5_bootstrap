@@ -1,8 +1,8 @@
 {
-  "name": "PROJECT_NAME",
+  "name": "Project_Name",
   "version": "0.0.1",
-  "description": "PROJECT_DESCRIPTION",
-  "main": "index.js",
+  "description": "Project_Name_Description",
+  "main": "dev/js/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,7 +23,7 @@
     "type" : "git",
     "url" : "https://github.com/owzzz/html5_bootstrap.git"
   },
-  "author": "AUTHOR_NAME",
+  "author": "Author_Name",
   "license": "ISC",
   "devDependencies": {
     "grunt": "^0.4.4",
