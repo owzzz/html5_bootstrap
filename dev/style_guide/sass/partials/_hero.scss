@@ -1,10 +1,9 @@
 .sg-hero {
 	background: $col-black;
 	height: 300px;
-	margin-bottom: $verticalSpacingMed;
+	margin-bottom: $vertical-Spacing-Med;
 
 	.sg-hero-inner {
-		@include clearfix;
 		padding: 5.3em;
 		margin: auto;
 		text-align: center;
@@ -18,7 +17,7 @@
 				margin-bottom: 0.3em;
 				text-transform: uppercase;
 
-				@include media($bp-desktop-lrg) {
+				@media (max-width: $bp-desktop-lrg) {
 					font-size: 1.8em;
 				}
 			}
@@ -28,8 +27,8 @@
 				margin-bottom: 3em;	
 				font-weight: 200;
 				line-height: 1.8em;
-
-				@include media($bp-desktop-lrg) {
+				
+				@media (max-width: $bp-desktop-lrg) {
 					font-size: 1.2em;
 					max-width: 90%;
 				}

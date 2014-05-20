@@ -1,7 +1,6 @@
 (function(window, undefined) {
 	"use strict";
 
-	var module = module || null;
 	/**
 	* This is our helpers singleton. Anything that can be shared across modules can be used here.
 	*
@@ -49,6 +48,14 @@
 		isTouch: function() {
 			return (this.eventClick === "touchend");
 		},
+		
+		transEndEventNames: {
+			'WebkitTransition': 'webkitTransitionEnd',
+			'MozTransition': 'transitionend',
+			'OTransition': 'oTransitionEnd',
+			'msTransition': 'MSTransitionEnd',
+			'transition': 'transitionend'
+		},
 
 		/**
 		* My isDesktop description.  Like other pieces of your comment blocks, 
@@ -63,13 +70,13 @@
 			return; 
 		},
 
-    	eventStart: (typeof window.ontouchstart === "undefined") ? 'mousedown' : 'touchstart',
+    		eventStart: (typeof window.ontouchstart === "undefined") ? 'mousedown' : 'touchstart',
 
 		eventEnd: (typeof window.ontouchstart === "undefined") ? 'mouseup' : 'touchend',
 
-    	eventMove: (typeof window.ontouchstart === "undefined") ? 'mousemove' : 'touchmove',
+    		eventMove: (typeof window.ontouchstart === "undefined") ? 'mousemove' : 'touchmove',
 
-    	eventClick: (typeof window.ontouchstart === "undefined") ? 'click' : 'touchend'
+    		eventClick: (typeof window.ontouchstart === "undefined") ? 'click' : 'touchend'
 	};
 
 	// Check if we have Browserify

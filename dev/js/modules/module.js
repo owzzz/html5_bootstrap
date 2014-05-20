@@ -1,8 +1,6 @@
 (function(window, undefined) {
 	"use strict";
 
-	var module = module || null;
-	
 	/**
 	* This is my first module/component/widget/plugin.
 	*
@@ -23,7 +21,7 @@
 		* @return {Number} Returns Number or NAN
 		*/
 
-		AddTwoNumbers: function(a,b) {
+		addTwoNumbers: function(a,b) {
 			return (a+b);
 		}
 	};

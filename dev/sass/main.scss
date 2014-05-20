@@ -4,7 +4,7 @@
 
 
 section {
-	margin-bottom: $verticalSpacingMed;
+	margin-bottom: $vertical-Spacing-Med;
 }
 
 section:last-child {
@@ -12,6 +12,5 @@ section:last-child {
 }
 
 .wrapper {
-	@include outer-container;
 	width: 100%;
 }

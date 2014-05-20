@@ -6,6 +6,8 @@ dev/js/vendor
 
 /node_modules
 .DS_Store
+npm-debug.log
 .svn
 .sass-cache
 /dist
+.sonar

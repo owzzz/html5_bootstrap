@@ -4,8 +4,9 @@ module.exports = function(grunt) {
   var DIST_PATH = "./dist/";
   var DEV_PATH  = "./dev/";
 
-  grunt.loadNpmTasks('assemble');
-  require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+  require('load-grunt-tasks')(grunt, {
+    pattern: ['grunt-*', 'assemble', '!grunt-template-jasmine-istanbul']
+  });
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -29,6 +30,12 @@ module.exports = function(grunt) {
           {
             expand: true, 
             cwd: 'dev/', 
+            src: ['*.html'], 
+            dest: DIST_PATH 
+          },
+          {
+            expand: true, 
+            cwd: 'dev/', 
             src: ['fonts/**'], 
             dest: DIST_PATH 
           },
@@ -36,6 +43,18 @@ module.exports = function(grunt) {
             expand: true, 
             cwd: 'dev/', 
             src: ['img/**'], 
+            dest: DIST_PATH 
+          },
+          {
+            expand: true, 
+            cwd: 'dev/', 
+            src: ['data/**'], 
+            dest: DIST_PATH 
+          },
+          {
+            expand: true, 
+            cwd: 'dev/', 
+            src: ['favicon.ico'], 
             dest: DIST_PATH 
           }
         ]
@@ -77,16 +96,18 @@ module.exports = function(grunt) {
           sourcemap: false
         },
         files: {
-          'dist/css/main.css' : 'dev/sass/**/*.{scss,sass}'
+          'dist/css/main.css' : 'dev/sass/main.scss'
         }
       },
       dev: {                          
         options: {                      
-          style: 'compressed',
-          sourcemap: true
+          style: 'expanded',
+          sourcemap: true,
+          trace: true,
+          debugInfo: true
         },
         files: {
-          'dist/css/main.css' : 'dev/sass/**/*.{scss,sass}'
+          'dist/css/main.css' : 'dev/sass/main.scss'
         }
       }
     },
@@ -98,7 +119,7 @@ module.exports = function(grunt) {
     browserify: {
       dist: {
         files: {
-          'dist/js/main.min.js' : [DEV_PATH + '**/*.js', '!dev/js/vendor/']
+          'dist/js/main.min.js' : [DEV_PATH + 'js/main.js']
         }
       }
     },
@@ -239,7 +260,7 @@ module.exports = function(grunt) {
       options: {
         engine: 'gm',
         sizes: [{ name: 'small', width: 320 },{ name: 'medium', width: 640 },{ name: 'large', width: 1024 }],
-        quality: 0.2,
+        quality: 70,
         aspectRatio: true
       },
       dist: {
@@ -274,11 +295,17 @@ module.exports = function(grunt) {
     // https://github.com/pivotal/jasmine
 
     jasmine: {
-        // Your project's source files
-        src: 'dev/**/*.js',
-        options : {
-          // Your Jasmine spec files
-          specs: 'dev/specs/**/*.js' 
+        coverage: {
+            src: ['dev/js/**/*.js', '!dev/js/vendor/**/*.js'],
+            options: {
+                specs: ['dev/specs/**/*.js'],
+                template: require('grunt-template-jasmine-istanbul'),
+                templateOptions: {
+                    type: 'lcov',
+                    coverage: 'dist/coverage/coverage.lcov',
+                    report: 'dist/coverage'
+                }
+            }
         }
     },
 
@@ -363,10 +390,6 @@ module.exports = function(grunt) {
           port: 35729
         }
       },
-      grunt: {
-        files: ['Gruntfile.js'],
-        tasks: ['dev']
-      },
       styleGuide: {
         files: [DEV_PATH + 'style_guide/sass/**/*.{sass,scss}', DEV_PATH + 'style_guide/**/*.hbs'],
         tasks: ['sass:styleGuide', 'newer:assemble:styleGuide']
@@ -375,17 +398,25 @@ module.exports = function(grunt) {
         files: [DEV_PATH + 'sass/**/*.{sass,scss}'],
         tasks: ['newer:sass:dev', 'sass:styleGuide']
       },
+      data: {
+        files: [DEV_PATH + "data/**/*.{json,yaml}"],
+        tasks: ['dev']
+      },
+      gruntFile: {
+        files: ['Gruntfile.js'],
+        tasks: ['dev']
+      },
       scripts: {
         files: [DEV_PATH + 'js/**/*.js'],
-        tasks: ['newer:jshint', 'newer:browserify', 'newer:uglify:dev']
+        tasks: ['newer:jshint', 'browserify', 'newer:uglify:dev']
       },
       html: {
-        files: [DEV_PATH + 'views/**/*.hbs', DEV_PATH + 'style_guide/**/*.hbs'],
-        tasks: ['newer:assemble:dev', 'newer:htmlmin:dev']
+        files: [DEV_PATH + 'views/**/*.hbs', DEV_PATH + 'style_guide/**/*.hbs', DEV_PATH + '*.html'],
+        tasks: ['assemble:dev', 'htmlmin:dev']
       },
       images: {
         files: [DEV_PATH + 'img/**/*.{jpg,gif,png}'],
-        tasks: ['newer:responsive_images', 'newer:imagemin:dev']
+        tasks: ['responsive_images', 'imagemin:dev']
       }
     }
   });
@@ -394,7 +425,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('docs', ['yuidoc']);
 
-  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'newer:browserify', 'newer:uglify:modernizr', 'newer:uglify:dev', 'newer:sass:dev', 'autoprefixer', 'newer:assemble:dev', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
+  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'browserify', 'newer:uglify:modernizr', 'newer:uglify:dev', 'newer:sass:dev', 'autoprefixer', 'newer:assemble:dev', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
 
   grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'newer:uglify:modernizr', 'uglify:dist', 'sass:dist', 'autoprefixer', 'newer:assemble:dev', 'htmlmin:dist', 'imagemin:dist', 'responsive_images', 'yuidoc']);
 

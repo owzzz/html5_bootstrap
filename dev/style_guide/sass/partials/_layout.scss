@@ -2,9 +2,8 @@
 @import "variables";
 
 .sg-wrapper {
-	max-width: $maxContainerWidth;
+	max-width: $max-container-width;
 	margin: 0 auto;
-	@include outer-container;
 }
 
 .sg-left-col {
@@ -16,7 +15,7 @@
 .sg-right-col {
 	padding: 0 $container-padding-md;
 	float: left;
-	width: 69%;
+	width: 65%;
 	margin: 0 0 $container-padding-md 1%;
 }
 

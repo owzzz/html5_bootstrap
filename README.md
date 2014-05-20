@@ -1,4 +1,4 @@
-# HTML5 Bootstrap
+# HTML5 Bootstrap [![Build Status](https://travis-ci.org/owzzz/html5_bootstrap.svg)](https://travis-ci.org/owzzz/html5_bootstrap/)
 
 ####Introduction
 
@@ -19,6 +19,7 @@ Setting up Grunt tooling at the start of projects can be tedious and time consum
 * [HTML Minification](https://github.com/gruntjs/grunt-contrib-htmlmin‎)
 * [Watch / Live reload](https://github.com/gruntjs/grunt-contrib-watch)
 * [Jasmine](https://github.com/gruntjs/grunt-contrib-jasmine)
+* [Istanbul Code Coverage](https://github.com/maenu/grunt-template-jasmine-istanbul)
 * [PhantomJS](http://phantomjs.org/)
 * [Assemble](http://assemble.io/)
 * [YUIDocs](https://github.com/gruntjs/grunt-contrib-yuidoc)
@@ -28,8 +29,6 @@ Setting up Grunt tooling at the start of projects can be tedious and time consum
 
 * [Normalize](http://necolas.github.io/normalize.css/)
 * [Modernizr](http://modernizr.com/)
-* [Bourbon](http://bourbon.io/docs/)
-* [Neat Grids](http://neat.bourbon.io)
 
 #### Requirements
 Make sure your have the following installed with these versions or greater when running the bootstrap
@@ -60,6 +59,12 @@ bundle install
 npm install
 ```
 
+To require libraries that are not in the commonjs format we are going to use napa to get them and wrap them for easy inclusion with browserify.
+
+```
+npm install -g napa
+```
+
 #### Library dependencies (Client Libraries)
 
 ```
@@ -68,13 +73,16 @@ bower install
 
 #### Image optimisation dependencies
 
-To run optimisations over images we use GraphicsMagick, to install we need to use brew. If you do not have brew installed you'll need to go ahead and get that setup.
+To run optimisations over images we use GraphicsMagick, to install we need to use brew. If your on mac and do not have brew installed you'll need to go ahead and get that setup.
 
 ```
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ```
 
+If your on windows you will need to download the binary and install it manually on your machine. You can get the binary [here](http://www.graphicsmagick.org/download.html).
+
 Now we can install GraphicsMagick
+
 
 ```
 brew install GraphicsMagick
@@ -143,6 +151,9 @@ A list of upcoming features for consideration. Feel free to add feature requests
 
 #### Change log
 
-I've got nothing.
+Recent Updates to repo
 
-* Updated item **(DATE)**
+* Swapped out Browserify-shim for napa (17/05/2014)
+* Removed Neat and Bourbon (13/05/2014)
+* Added Travis Build File (28/04/2014)
+* Added Istanbul Code Coverage (28/04/2014)
