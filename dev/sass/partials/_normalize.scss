@@ -7,7 +7,11 @@
 // Normalize.scss settings
 // =============================================================================
 
-
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+ 
 // Set to true if you want to add support for IE6 and IE7
 // Notice: setting to true might render some elements
 // slightly differently than when set to false
