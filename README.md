@@ -153,6 +153,7 @@ A list of upcoming features for consideration. Feel free to add feature requests
 
 Recent Updates to repo
 
+* Added Style Guide (Work In Progress) (21/05/2014)
 * Swapped out Browserify-shim for napa (17/05/2014)
 * Removed Neat and Bourbon (13/05/2014)
 * Added Travis Build File (28/04/2014)
