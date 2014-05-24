@@ -120,7 +120,7 @@ grunt dev
 #### Production target
 
 ```
-grunt prod
+grunt dist
 ```
 
 #### Server target
