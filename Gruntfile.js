@@ -119,6 +119,10 @@ module.exports = function(grunt) {
         files: {
           'dist/js/main.min.js' : [DEV_PATH + 'js/main.js']
         }
+      },
+      test: {
+          src: [DEV_PATH + 'specs/**/*.js'],
+          dest: 'dist/tests/test_bundle.js'
       }
     },
 
@@ -294,9 +298,9 @@ module.exports = function(grunt) {
 
     jasmine: {
         coverage: {
-            src: ['dev/js/**/*.js', '!dev/js/vendor/**/*.js'],
+            src: ['dist/js/main.min.js'],
             options: {
-                specs: ['dev/specs/**/*.js'],
+                specs: ['dist/tests/test_bundle.js'],
                 template: require('grunt-template-jasmine-istanbul'),
                 templateOptions: {
                     type: 'lcov',
