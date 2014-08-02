@@ -3,6 +3,7 @@ module.exports = function(grunt) {
 
   var DIST_PATH = "./dist/";
   var DEV_PATH  = "./dev/";
+  var BROWSERIFY_CONFIG = require('./browserify-config.js'),
 
   require('load-grunt-tasks')(grunt, {
     pattern: ['grunt-*', 'assemble', '!grunt-template-jasmine-istanbul']
@@ -118,6 +119,10 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'dist/js/main.min.js' : [DEV_PATH + 'js/main.js']
+        },
+        options: {
+            alias: BROWSERIFY_CONFIG,
+            debug: true
         }
       },
       test: {
