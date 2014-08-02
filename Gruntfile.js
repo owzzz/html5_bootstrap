@@ -1,9 +1,9 @@
 module.exports = function(grunt) {
   "use strict";
 
-  var DIST_PATH = "./dist/";
-  var DEV_PATH  = "./dev/";
-  var BROWSERIFY_CONFIG = require('./browserify-config.js'),
+  var DIST_PATH = "dist/";
+  var DEV_PATH  = "dev/";
+  var BROWSERIFY_CONFIG = require('./browserify-config.js');
 
   require('load-grunt-tasks')(grunt, {
     pattern: ['grunt-*', 'assemble', '!grunt-template-jasmine-istanbul']
@@ -62,19 +62,23 @@ module.exports = function(grunt) {
       }
     },
 
-    // Connect
-    // Start a static web server.
-    // https://github.com/gruntjs/grunt-contrib-connect
 
+    // Grunt Connect
+    // https://github.com/gruntjs/grunt-contrib-connect
+    // Used to create a static web server for dev
     connect: {
-      server: {
         options: {
-          hostname: 'localhost',
-          base: DIST_PATH,
-          port: 9001,
-          keepalive: true
+            port: 9000,
+            livereload: 35729,
+            // change this to '0.0.0.0' to access the server from outside
+            hostname: '0.0.0.0'
+        },
+        livereload: {
+            options: {
+                open: true,
+                base: [DIST_PATH]
+            }
         }
-      }
     },
 
     // SASS
@@ -432,7 +436,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('docs', ['yuidoc']);
 
-  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'browserify', 'newer:uglify:modernizr', 'newer:uglify:dev', 'newer:sass:dev', 'autoprefixer', 'newer:assemble:dev', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'watch']);
+  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'browserify', 'newer:uglify:modernizr', 'newer:uglify:dev', 'newer:sass:dev', 'autoprefixer', 'newer:assemble:dev', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'connect:livereload', 'watch']);
 
   grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'newer:uglify:modernizr', 'uglify:dist', 'sass:dist', 'autoprefixer', 'newer:assemble:dev', 'htmlmin:dist', 'imagemin:dist', 'responsive_images', 'yuidoc']);
 

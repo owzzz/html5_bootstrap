@@ -1,0 +1,11 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    sass (3.3.14)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler
+  sass (~> 3.3.5)
