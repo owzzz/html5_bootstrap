@@ -436,7 +436,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('docs', ['yuidoc']);
 
-  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'browserify', 'newer:uglify:modernizr', 'newer:uglify:dev', 'newer:sass:dev', 'autoprefixer', 'newer:assemble:dev', 'newer:htmlmin:dev', 'newer:imagemin:dev', 'responsive_images', 'connect:livereload', 'watch']);
+  grunt.registerTask('dev', ['clean', 'copy', 'newer:jshint', 'browserify', 'newer:uglify:modernizr', 'newer:uglify:dev', 'newer:sass:dev', 'autoprefixer', 'newer:assemble:dev', 'newer:htmlmin:dev', 'imagemin:dev', 'responsive_images', 'connect:livereload', 'watch']);
 
   grunt.registerTask('dist', ['clean', 'copy', 'jshint', 'browserify', 'newer:uglify:modernizr', 'uglify:dist', 'sass:dist', 'autoprefixer', 'newer:assemble:dev', 'htmlmin:dist', 'imagemin:dist', 'responsive_images', 'yuidoc']);
 
