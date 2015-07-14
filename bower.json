@@ -1,0 +1,21 @@
+{
+  "name": "Project_Name",
+  "version": "0.0.1",
+  "description": "Project_Description",
+  "main": "dev/js/main.js",
+  "authors": [
+    "Author_Name"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "~2.7.2"
+  }
+}

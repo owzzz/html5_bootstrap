@@ -52,19 +52,30 @@ Then we need to get the rest of our ruby dependencies (Sass, Neat Bourbon)
 bundle install
 ```
 
-#### Installing Tooling dependencies (Grunt tasks)
+#### Installing Tooling dependencies (Grunt tasks, Bower)
 
 ```
 npm install
 ```
 
+To require libraries that are not in the commonjs format we are going to use napa to get them and wrap them for easy inclusion with browserify.
+
+```
+npm install -g napa
+```
+
+#### Library dependencies (Client Libraries)
+
+```
+bower install
+```
 
 #### Image optimisation dependencies
 
 To run optimisations over images we use GraphicsMagick, to install we need to use brew. If your on mac and do not have brew installed you'll need to go ahead and get that setup.
 
 ```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ```
 
 If your on windows you will need to download the binary and install it manually on your machine. You can get the binary [here](http://www.graphicsmagick.org/download.html).
@@ -125,7 +136,7 @@ grunt docs
 
 #### Road Map
 
-A list of upcoming features for consideration.
+A list of upcoming features for consideration. Feel free to add feature requests.
 
 * Sonar Integration
 * Custom Yeoman Generator (AngularJS or HTML5)
