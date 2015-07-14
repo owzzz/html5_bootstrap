@@ -1,0 +1,39 @@
+// Style Guide Specific Styles
+@import "variables";
+
+.sg-wrapper {
+	max-width: $max-container-width;
+	margin: 0 auto;
+}
+
+.sg-left-col {
+	float: left;
+	width: 29%;
+	margin-right: 1%;
+}
+
+.sg-right-col {
+	padding: 0 $container-padding-md;
+	float: left;
+	width: 65%;
+	margin: 0 0 $container-padding-md 1%;
+}
+
+.sg-example {
+	position: relative;
+	padding: $container-padding-xlrg $container-padding-md;
+	border:1px solid $col-grey;
+}
+.sg-example:after {
+	content: "Example";
+	position: absolute;
+	top: $container-padding-md;
+	left: $container-padding-md;
+	font-size: 8px;
+	color: $col-grey;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-family: "Trade Gothic for Nike 365 BdCn", Hevitica, Arial, sans-serif;
+}
+
+

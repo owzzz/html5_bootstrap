@@ -337,7 +337,7 @@ module.exports = function(grunt) {
           assets: DEV_PATH,
           partials: [DEV_PATH + 'views/partials/**/*.hbs'],
           layout: [DEV_PATH + 'views/layout/default.hbs'],
-          data: [DEV_PATH + 'views/data/**/*.{json,yaml}'],
+          data: [DEV_PATH + 'data/*.{json,yml}'],
           production: false
         },
         files: [{
@@ -380,7 +380,7 @@ module.exports = function(grunt) {
         tasks: ['newer:sass:dev']
       },
       data: {
-        files: [DEV_PATH + "data/**/*.{json,yaml}", DEV_PATH + "views/data/**/*.{json,yaml}"],
+        files: [DEV_PATH + "data/**/*.{json,yaml}"],
         tasks: ['dev']
       },
       gruntFile: {

@@ -1,0 +1,38 @@
+.secondary-nav {
+	background: $col-black;
+	margin: 0 0 $container-padding-md 0;
+	padding: 0;
+	
+	ul {
+		margin: 0;
+		padding: 0;
+
+		li {
+			list-style-type: none;
+			line-height: $base-line-height + 10;
+			border-bottom: 1px solid $col-white;
+			
+			a {
+				text-decoration: none;
+				text-transform: capitalize;
+				color: $col-white;
+				font-size: 0.8em;
+				text-transform: uppercase;
+				display: block;
+				padding: $container-padding-sml;
+				
+				&:hover {
+					background: $col-white;
+					color: $col-black;
+					cursor: pointer;
+				}
+			}
+			
+			&:hover {
+				border-bottom: 1px solid $col-black;
+			}
+		}
+		
+		
+	}
+}

@@ -4,10 +4,37 @@
 /* MOBILE & DEFAULT STYLES
  *************************************************************/
 
+.main-nav {
+	height: 50px;
+
+	
+}
 
 /* DESKTOP STYLES
  *************************************************************/
 
 @media only screen and (min-width: $bp-tablet-min) {
-
+	.main-nav {
+		padding-top: 17px; 
+		background: $col-black;
+		margin-bottom: $container-padding-md;
+		
+		ul {
+			margin: 0 auto;
+			width: 405px;
+			overflow: hidden;
+			
+			li {
+				float: left;
+				list-style-type: none;
+				margin-right: 5%;
+			
+				a {
+					text-decoration: none;
+					text-transform: uppercase;
+					color: $col-white;
+				}
+			}
+		}
+	}
 }

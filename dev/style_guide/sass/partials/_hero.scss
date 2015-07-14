@@ -1,0 +1,38 @@
+.sg-hero {
+	background: $col-black;
+	height: 300px;
+	margin-bottom: $vertical-Spacing-Med;
+
+	.sg-hero-inner {
+		padding: 5.3em;
+		margin: auto;
+		text-align: center;
+		color: $col-white;
+
+		.sg-hero-copy {
+			text-align: center;
+			
+			h1 {
+				font-size: 3.4em;
+				margin-bottom: 0.3em;
+				text-transform: uppercase;
+
+				@media (max-width: $bp-desktop-lrg) {
+					font-size: 1.8em;
+				}
+			}
+
+			p {
+				margin: auto;
+				margin-bottom: 3em;	
+				font-weight: 200;
+				line-height: 1.8em;
+				
+				@media (max-width: $bp-desktop-lrg) {
+					font-size: 1.2em;
+					max-width: 90%;
+				}
+			}
+		}
+	}
+}
