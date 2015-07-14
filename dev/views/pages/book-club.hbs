@@ -1,0 +1,25 @@
+<div class="col-md-4 hidden-xs">
+ 	{{> book}}
+ 	{{> pre-order}}
+</div>
+<div class="col-md-8">
+	{{> title }}
+	{{> nav}}
+	<div class="col-md-12 hidden-sm hidden-md hidden-lg">
+ 		{{> book}}
+ 		{{> pre-order}}
+	</div>
+	 <div class="col-md-8">
+	    <h2 class="page-title">{{book-club.pageTitle}}</h2>
+	    <p class="hidden-sm hidden-md hidden-lg">Jeff's novel makes a wonderful selection for a book club and will engender lively debate about television news and its role in storytelling and crime fighting.  A brief discussion guide and an interview with the author is available for Live to Air.</p>
+	    {{#each book-club.questions}}
+			<p><strong>Q:</strong> {{question}}</p>
+			<p><strong>A:</strong> {{answer}}</p>
+	   	{{/each}}
+	  </div>
+
+	  <div class="col-md-4">
+	  	<img src="img/author-jeff-diamond4.jpg" alt="Jeffrey L Diamond" class="profile-pic author-pic img-responsive img-rounded"/>
+	    <p class="hidden-xs">Jeff's novel makes a wonderful selection for a book club and will engender lively debate about television news and its role in storytelling and crime fighting.  A brief discussion guide and an interview with the author is available for Live to Air.</p>
+	  </div>
+</div>

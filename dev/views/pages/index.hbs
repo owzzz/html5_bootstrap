@@ -1,1 +1,21 @@
-<h1>Main Page</h1>
+<div class="col-md-4 hidden-xs">
+ 	{{> book}}
+ 	{{> pre-order}}
+</div>
+<div class="col-md-8">
+	{{> title }}
+	{{> nav}}
+	<div class="col-md-4 hidden-sm hidden-md hidden-lg">
+	 	{{> book}}
+	 	{{> pre-order}}
+	</div>
+  <div class="col-md-8 no-padding">
+  	<h2>Review</h2>
+    {{> endorsements}}
+    {{> about-the-book}}
+  </div>
+
+  <div class="col-md-4 no-padding-right">
+    {{> author assets}}
+  </div>
+</div>  

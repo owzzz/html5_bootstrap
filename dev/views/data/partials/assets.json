@@ -1,0 +1,14 @@
+{
+	"authorPicUrlOne": {
+		"imgPath": "img/author-jeff-diamond1.jpg",
+		"altCopy": "Portrait Picture of Jeffrey L Diamond"
+	},
+	"authorPicUrlTwo": {
+		"imgPath": "img/author-jeff-diamond2.jpg",
+		"altCopy": "Portrait Picture of Jeffrey L Diamond"
+	},
+	"authorPicUrlThree": {
+		"imgPath": "img/author-jeff-diamond3.jpg",
+		"altCopy": "Portrait Picture of Jeffrey L Diamond"
+	}
+}

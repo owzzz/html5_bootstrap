@@ -342,28 +342,12 @@ module.exports = function(grunt) {
     // https://github.com/assemble/assemble
 
     assemble: {
-      styleGuide: {
-        options: {
-          assets: DEV_PATH,
-          partials: [DEV_PATH + 'style_guide/partials/**/*.hbs'],
-          layout: [DEV_PATH + 'style_guide/layout/default.hbs'],
-          data: [DEV_PATH + 'data/*.{json,yml}', DEV_PATH + 'style_guide/data/**/*.{json,yaml}'],
-          production: false,
-          postprocess: require('pretty')
-        },
-        files: [{
-          expand: true,
-          src: ['*.hbs'],
-          cwd: DEV_PATH + 'style_guide/pages/',
-          dest: DIST_PATH + 'style_guide/'
-        }]
-      },
       dev: {
         options: {
           assets: DEV_PATH,
           partials: [DEV_PATH + 'views/partials/**/*.hbs'],
           layout: [DEV_PATH + 'views/layout/default.hbs'],
-          data: [DEV_PATH + 'data/*.{json,yml}'],
+          data: [DEV_PATH + 'views/data/**/*.{json,yaml}'],
           production: false
         },
         files: [{
@@ -401,16 +385,12 @@ module.exports = function(grunt) {
           port: 35729
         }
       },
-      styleGuide: {
-        files: [DEV_PATH + 'style_guide/sass/**/*.{sass,scss}', DEV_PATH + 'style_guide/**/*.hbs'],
-        tasks: ['sass:styleGuide', 'newer:assemble:styleGuide']
-      },
       styles: {
         files: [DEV_PATH + 'sass/**/*.{sass,scss}'],
         tasks: ['newer:sass:dev', 'sass:styleGuide']
       },
       data: {
-        files: [DEV_PATH + "data/**/*.{json,yaml}"],
+        files: [DEV_PATH + "data/**/*.{json,yaml}", DEV_PATH + "views/data/**/*.{json,yaml}"],
         tasks: ['dev']
       },
       gruntFile: {

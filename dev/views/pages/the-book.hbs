@@ -1,0 +1,22 @@
+<div class="col-md-4 hidden-xs">
+ 	{{> book}}
+ 	{{> pre-order}}
+</div>
+<div class="col-md-8">
+	{{> title }}
+	{{> nav}}
+	<div class="col-md-8 hidden-sm hidden-md hidden-lg">
+ 		{{> book}}
+ 		{{> pre-order}}
+	</div>
+	 <div class="col-md-8">
+		<h2 class="page-title">{{the-book.pageTitle}}</h2>
+		{{#each the-book.content}}
+			<p>{{copy}}</p>
+		{{/each}}
+	  </div>
+
+	  <div class="col-md-4">
+	  	<img src="img/author-jeff-diamond3.jpg" alt="Jeffrey L Diamond" class="profile-pic author-pic img-responsive img-rounded" />
+	  </div>
+</div>
