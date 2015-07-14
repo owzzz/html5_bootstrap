@@ -17,8 +17,7 @@ module.exports = function(grunt) {
     // https://github.com/gruntjs/grunt-contrib-clean
 
     clean: {
-      dist: [DIST_PATH],
-      styleGuide: [DIST_PATH + 'style_guide']
+      dist: [DIST_PATH]
     },
 
     // Copy
@@ -85,16 +84,7 @@ module.exports = function(grunt) {
     // Compile Sass to CSS.
     // https://github.com/gruntjs/grunt-contrib-sass
 
-    sass: { 
-      styleGuide: {
-        options: {                      
-          style: 'compressed',
-          sourcemap: false
-        },
-        files: {
-          'dist/style_guide/css/main.css' : 'dev/style_guide/sass/*.{scss,sass}'
-        }  
-      },                      
+    sass: {                      
       dist: {                          
         options: {                      
           style: 'compressed',
@@ -387,7 +377,7 @@ module.exports = function(grunt) {
       },
       styles: {
         files: [DEV_PATH + 'sass/**/*.{sass,scss}'],
-        tasks: ['newer:sass:dev', 'sass:styleGuide']
+        tasks: ['newer:sass:dev']
       },
       data: {
         files: [DEV_PATH + "data/**/*.{json,yaml}", DEV_PATH + "views/data/**/*.{json,yaml}"],
@@ -402,7 +392,7 @@ module.exports = function(grunt) {
         tasks: ['newer:jshint', 'browserify', 'newer:uglify:dev']
       },
       html: {
-        files: [DEV_PATH + 'views/**/*.hbs', DEV_PATH + 'style_guide/**/*.hbs', DEV_PATH + '*.html'],
+        files: [DEV_PATH + 'views/**/*.hbs', DEV_PATH + '*.html'],
         tasks: ['assemble:dev', 'htmlmin:dev']
       },
       images: {
@@ -411,8 +401,6 @@ module.exports = function(grunt) {
       }
     }
   });
-  
-  grunt.registerTask('styleguide', ['clean:styleGuide', 'sass:styleGuide', 'assemble:styleGuide', 'watch']);
 
   grunt.registerTask('docs', ['yuidoc']);
 
